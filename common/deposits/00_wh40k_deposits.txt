@@ -1,0 +1,65 @@
+d_wh_food_deposit = {
+	resources = {
+		food = 2
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0			
+	}
+}
+
+d_wh_minerals_deposit = {
+	resources = {
+		minerals = 2
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0			
+	}
+}
+
+d_wh_energy_deposit = {
+	resources = {
+		energy = 2
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0			
+	}
+}
+
+d_whb_food_deposit = {
+	resources = {
+		food = 15
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0			
+	}
+}
+
+d_whb_minerals_deposit = {
+	resources = {
+		minerals = 15
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0			
+	}
+}
+
+d_whb_energy_deposit = {
+	resources = {
+		energy = 15
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0			
+	}
+}

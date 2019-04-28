@@ -1,0 +1,166 @@
+namespace = prayofrainnurgle
+
+planet_event = {
+	id = prayofrainnurgle.1
+	title = "Drought"
+	desc = profra.1.desc
+	#is_triggered_only = yes
+	fire_only_once = yes
+	location = ROOT
+	picture = GFX_evt_Drought_Planet
+	trigger = {
+		years_passed > 6
+		has_planet_flag = Horkinsplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		add_modifier = {
+			modifier = "drought_planet"
+			days = -1
+		}
+	}
+	
+	option = {
+		name = "Sad..."
+		planet_event = { id = prayofrainnurgle.2 days = 2 }
+	}
+}
+
+planet_event = {
+	id = prayofrainnurgle.2
+	title = "Drought"
+	desc = profra.2.desc
+	picture = GFX_evt_No_Drought_Planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	location = ROOT
+
+	trigger = {
+
+	}
+	
+	immediate = {
+		add_modifier = {
+			modifier = "no_drought_planet"
+			days = -1
+		}
+		remove_modifier = "drought_planet"
+	}
+	
+	option = {
+		name = "What?! How?!"
+		planet_event = { id = prayofrainnurgle.3 days = 7 }
+		
+	}
+}
+
+planet_event = {
+	id = prayofrainnurgle.3
+	title = "Chaos Invasion!"
+	desc = profra.3.desc
+	picture = GFX_evt_Nurgle_Infestation
+	is_triggered_only = yes
+	fire_only_once = yes
+	location = ROOT
+	trigger = {
+		
+	}
+	
+	immediate = {
+		add_modifier = {
+			modifier = "drought_planet"
+			days = -1
+		}
+		change_pc = pc_daemonn
+				every_country = {
+					limit = {
+						has_country_flag = eyechaos_empire
+					}
+					save_event_target_as = eyechaos_empire
+				}
+				
+				while = {
+					count = 15
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}		
+				
+				create_fleet = { name = "Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "ok"
+	}
+}
+

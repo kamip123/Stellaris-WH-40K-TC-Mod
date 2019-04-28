@@ -1,0 +1,949 @@
+namespace = twelveblackcrusade
+
+country_event = {
+	id = twelveblackcrusade.1
+	title = "Chaos forces!"
+	desc = bc12.1.desc
+	picture = GFX_evt_Dwunasta_Black_Crusade
+	fire_only_once = yes
+
+	trigger = {
+		years_passed > 29
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade1
+			}
+			planet_event = { id = twelveblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade11
+			}
+			planet_event = { id = twelveblackcrusade.3 }
+		}
+		#next wave
+		country_event = { id = twelveblackcrusade.4 days = 50 }
+		#warpstorm
+		country_event = { id = twelveblackcrusade.9 days = 100 }
+		# first blackstone to be attacked
+		country_event = { id = twelveblackcrusade.12 days = 1 }
+		# planet killer arrive
+		country_event = { id = blackplanespaw.11 days = 101 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+planet_event = {
+	id = twelveblackcrusade.2
+	title = "Chaos forces!"
+	desc = bc1.2.desc
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_imperial_knight"
+					}					
+				}
+				#while = {
+				#	count = 1
+				#	create_army = {
+				#		name = "Chaos Titan"
+				#		owner = event_target:eyechaos_empire
+				#		species = owner_main_species
+				#		type = "chaos_warhound_titan"
+				#	}					
+				#}
+				while = {
+					count = 4									#was 8
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 4									#was 8
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 4									#was 8
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+planet_event = {
+	id = twelveblackcrusade.3
+	title = "Chaos forces!"
+	desc = bc1.2.desc
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 1									#was 3
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_imperial_knight"
+					}					
+				}
+				while = {
+					count = 1									#was 3
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_warhound_titan"
+					}					
+				}
+				while = {
+					count = 1									#was 2
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_reaver_titan"
+					}					
+				}
+				while = {
+					count = 7									#was 15
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 7									#was 15
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 7									#was 15
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 23
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+country_event = {
+	id = twelveblackcrusade.4
+	title = "Chaos forces!"
+	desc = bc12.4.desc
+	picture = GFX_evt_Osma_Black_Crusade
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade2
+			}
+			planet_event = { id = twelveblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade22
+			}
+			planet_event = { id = twelveblackcrusade.3 }
+		}
+		country_event = { id = twelveblackcrusade.5 days = 50 }
+		country_event = { id = twelveblackcrusade.13 days = 1 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.5
+	title = "Chaos forces!"
+	desc = bc12.5.desc
+	picture = GFX_evt_Siodma_Black_Crusade
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade3
+			}
+			planet_event = { id = twelveblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade33
+			}
+			planet_event = { id = twelveblackcrusade.3 }
+		}
+		country_event = { id = twelveblackcrusade.6 days = 50 }
+		country_event = { id = twelveblackcrusade.11 days = 1 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.6
+	title = "Chaos forces!"
+	desc = bc12.6.desc
+	picture = GFX_evt_Szosta_Black_Crusade
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade4
+			}
+			planet_event = { id = twelveblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade44
+			}
+			planet_event = { id = twelveblackcrusade.3 }
+		}
+		country_event = { id = twelveblackcrusade.7 days = 50 }
+		country_event = { id = twelveblackcrusade.14 days = 1 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.7
+	title = "Chaos forces!"
+	desc = bc12.7.desc
+	picture = GFX_evt_Piata_Black_Crusade
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade5
+			}
+			planet_event = { id = twelveblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade55
+			}
+			planet_event = { id = twelveblackcrusade.3 }
+		}
+		country_event = { id = twelveblackcrusade.8 days = 50 }
+		country_event = { id = twelveblackcrusade.15 days = 1 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.8
+	title = "Chaos forces!"
+	desc = bc12.8.desc
+	picture = GFX_evt_Czwarta_Black_Crusade
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade6
+			}
+			planet_event = { id = twelveblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade66
+			}
+			planet_event = { id = twelveblackcrusade.3 }
+		}
+		country_event = { id = twelveblackcrusade.100 days = 50 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.100
+	title = "Chaos forces!"
+	desc = bc12.9.desc
+	picture = GFX_evt_Trzecia_Black_Crusade
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade7
+			}
+			planet_event = { id = twelveblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = twelveblackcrusade77
+			}
+			planet_event = { id = twelveblackcrusade.3 }
+		}
+		#country_event = { id = twelveblackcrusade.9 days = 1}
+		country_event = { id = twelveblackcrusade.16 days = 1 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+############### warpstorm
+country_event = {
+	id = twelveblackcrusade.9
+	title = "Warp Storm!"
+	desc = bc12.10.desc
+	picture = GFX_evt_Warp_Storm
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				has_planet_flag = twelveblackcrusadews
+			}
+			planet_event = { id = twelveblackcrusade.10 }
+		}
+		#country_event = { id = twelveblackcrusade.11 days = 1}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = twelveblackcrusade.10
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+			create_fleet = { 
+				name = "Warp Chaos Portal" 
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 20000
+			}	
+				last_created_fleet = {
+					set_owner = event_target:eyechaos_empire
+					create_ship = {
+						name = random
+						design = "Chaos_Warp_Storm"
+						graphical_culture = "extra_dimensional_01"
+					}
+					set_location = {
+						target = ROOT
+						distance = 40
+						angle = random
+					}
+				}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+#############################
+
+country_event = {
+	id = twelveblackcrusade.11
+	title = "Chaos forces!"
+	desc = bc12.12.desc
+	picture = GFX_evt_Blackstone_Fortress
+	fire_only_once = yes
+	is_triggered_only = yes
+	location = event_target:blackstonefortress
+	
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = pierwszablackstonefortress
+			}
+			save_event_target_as = blackstonefortress
+			planet_event = { id = twelveblackcrusade.30 }
+		}
+		#country_event = { id = twelveblackcrusade.12 days = 1}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.12
+	title = "Chaos forces!"
+	desc = bc12.13.desc
+	picture = GFX_evt_Blackstone_Fortress
+	fire_only_once = yes
+	is_triggered_only = yes
+	location = event_target:blackstonefortress
+	
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = drugablackstonefortress
+			}
+			save_event_target_as = blackstonefortress
+			planet_event = { id = twelveblackcrusade.30 }
+		}
+		#country_event = { id = twelveblackcrusade.13 days = 1}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.13
+	title = "Chaos forces!"
+	desc = bc12.14.desc
+	picture = GFX_evt_Blackstone_Fortress
+	fire_only_once = yes
+	is_triggered_only = yes
+	location = event_target:blackstonefortress
+	
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = trzeciablackstonefortress
+			}
+			save_event_target_as = blackstonefortress
+			planet_event = { id = twelveblackcrusade.30 }
+		}
+		#country_event = { id = twelveblackcrusade.14 days = 1}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.14
+	title = "Chaos forces!"
+	desc = bc12.15.desc
+	picture = GFX_evt_Blackstone_Fortress
+	fire_only_once = yes
+	is_triggered_only = yes
+	location = event_target:blackstonefortress
+	
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = czwartablackstonefortress
+			}
+			save_event_target_as = blackstonefortress
+			planet_event = { id = twelveblackcrusade.30 }
+		}
+		#country_event = { id = twelveblackcrusade.15 days = 1}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.15
+	title = "Chaos forces!"
+	desc = bc12.16.desc
+	picture = GFX_evt_Blackstone_Fortress
+	fire_only_once = yes
+	is_triggered_only = yes
+	location = event_target:blackstonefortress
+	
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = piatablackstonefortress
+			}
+			save_event_target_as = blackstonefortress
+			planet_event = { id = twelveblackcrusade.30 }
+		}
+		#country_event = { id = twelveblackcrusade.16 days = 1}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = twelveblackcrusade.16
+	title = "Chaos forces!"
+	desc = bc12.17.desc
+	picture = GFX_evt_Blackstone_Fortress
+	fire_only_once = yes
+	is_triggered_only = yes
+	location = event_target:blackstonefortress
+	
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = szostablackstonefortress
+			}
+			save_event_target_as = blackstonefortress
+			planet_event = { id = twelveblackcrusade.30 }
+		}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = twelveblackcrusade.30
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 1									#was 2
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Death_Guard"
+					}					
+				}
+				while = {
+					count = 1									#was 2
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "World_Eaters"
+					}					
+				}
+				while = {
+					count = 1									#was 2
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Night_Lords"
+					}					
+				}
+				while = {
+					count = 7									#was 15
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 7									#was 15
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 7									#was 15
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Cultists"
+					}					
+				}
+				create_fleet = { name = "Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+}
+
+
+
+
+

@@ -1,0 +1,292 @@
+namespace = exterminatus
+
+planet_event = {
+	id = exterminatus.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		FROM = { 
+			is_ai = no 
+			has_country_flag = mankind_star_empire
+		}
+		fortification_health < 1
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_planet_flag = planet_not_exterminatus_for_twoandhalf
+					is_planet_class = pc_craftworld
+				}
+			}
+			FROM = { 
+				country_event = { id = exterminatus.2 } 
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = exterminatus.2
+	title = "Exterminatus"
+	desc = "After destroying enemy fortifications our mighty navy can begin exterminatus against this planet."
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+	location = FROM
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Wait for resources"	
+	}
+	
+	option = {
+		name = "Don't use exterminatus"
+		hidden_effect = {
+			FROM = { 
+				set_timed_planet_flag = {
+					flag = planet_not_exterminatus_for_twoandhalf
+					days = 1000
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = "Use Orbital Bombardment"
+		trigger = {
+			energy > 29990
+			has_country_resource = {
+				type = minerals
+				amount > 29990
+			}
+		}
+		add_minerals = -30000
+		add_energy = -30000
+		hidden_effect = {
+			FROM = { 
+				planet_event = { id = exterminatus.3 }
+			}
+			
+		}
+	}
+	
+	option = {
+		trigger = {
+			energy > 39990
+			has_country_resource = {
+				type = minerals
+				amount > 39990
+			}
+		}
+		add_minerals = -40000
+		add_energy = -40000
+		name = "Use Cyclonic Torpedoes"
+		hidden_effect = {
+			FROM = { 
+				planet_event = { id = exterminatus.4 }
+			}
+			
+		}
+	}
+	
+	option = {
+		trigger = {
+			energy > 49990
+			has_country_resource = {
+				type = minerals
+				amount > 49990
+			}
+		}
+		add_minerals = -50000
+		add_energy = -50000
+		name = "Use Two-Stage Cyclonic Torpedoes"
+		hidden_effect = {
+			FROM = { 
+				planet_event = { id = exterminatus.5 }
+			}
+			
+		}
+	}
+	
+	option = {
+		trigger = {
+			energy > 39990
+			has_country_resource = {
+				type = minerals
+				amount > 39990
+			}
+		}
+		add_minerals = -40000
+		add_energy = -40000
+		name = "Use Virus Bombs"
+		hidden_effect = {
+			FROM = { 
+				planet_event = { id = exterminatus.6 }
+			}
+			
+		}
+	}
+}
+
+planet_event = {
+	id = exterminatus.3
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			30 = { change_pc = pc_molten }
+			30 = { change_pc = pc_barren }
+			40 = { change_pc = pc_nuked }
+		}
+		
+		#change_pc = pc_barren_cold
+		every_planet_army = { remove_army = yes }
+		destroy_colony = { keep_buildings = no }
+		
+		save_event_target_as = planettobeexterminated
+		
+		create_ambient_object = {
+			type = "exterminatus_torpedo"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 0
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = exterminatus.4
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			40 = { change_pc = pc_barren }
+			30 = { change_pc = pc_barren_cold }
+			30 = { change_pc = pc_frozen }
+		}
+		
+		#change_pc = pc_barren_cold
+		every_planet_army = { remove_army = yes }
+		destroy_colony = { keep_buildings = no }
+		
+		save_event_target_as = planettobeexterminated
+		
+		create_ambient_object = {
+			type = "exterminatus_torpedo"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 0
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = exterminatus.5
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			60 = { 
+				if = {
+					limit = {
+						planet_size >20
+					}
+					change_planet_size = -20
+				}
+				if = {
+					limit = {
+						planet_size >15
+					}
+					change_planet_size = -15
+				}
+				if = {
+					limit = {
+						planet_size >10
+					}
+					change_planet_size = -10
+				}
+				if = {
+					limit = {
+						planet_size >5
+					}
+					change_planet_size = -5
+				}
+				change_pc = pc_asteroid 
+			}
+			10 = { change_pc = pc_barren_cold }
+			30 = { change_pc = pc_frozen }
+		}
+		
+		#change_pc = pc_barren_cold
+		every_planet_army = { remove_army = yes }
+		destroy_colony = { keep_buildings = no }
+		
+		save_event_target_as = planettobeexterminated
+		
+		create_ambient_object = {
+			type = "exterminatus_torpedo"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 0
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = exterminatus.6
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			30 = { change_pc = pc_barren }
+			70 = { change_pc = pc_toxic }
+		}
+		
+		save_event_target_as = planettobeexterminated
+		
+		create_ambient_object = {
+			type = "exterminatus_torpedo"
+			location = solar_system
+		}	
+		
+		#change_pc = pc_barren_cold
+		every_planet_army = { remove_army = yes }
+		destroy_colony = { keep_buildings = no }
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 0
+			}
+		}
+	}
+}

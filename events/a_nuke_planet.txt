@@ -1,0 +1,90 @@
+namespace = nukeplanet
+
+
+
+planet_event = {
+	id = nukeplanet.2
+	hide_window = yes
+	location = ROOT
+	is_triggered_only = yes
+	
+	immediate = {
+		change_pc = pc_nuked
+		owner = { save_event_target_as = nukeplanetowner }
+		create_army = {
+			name = "nuke army"
+			owner = event_target:nukeplanetowner
+			species = owner_main_species
+			type = "death_korps"
+		}
+		create_army = {
+			name = "nuke army"
+			owner = event_target:nukeplanetowner
+			species = owner_main_species
+			type = "death_korps"
+		}
+		create_army = {
+			name = "nuke army"
+			owner = event_target:nukeplanetowner
+			species = owner_main_species
+			type = "death_korps"
+		}
+		create_army = {
+			name = "nuke army"
+			owner = event_target:nukeplanetowner
+			species = owner_main_species
+			type = "death_korps"
+		}
+		create_army = {
+			name = "nuke army"
+			owner = event_target:nukeplanetowner
+			species = owner_main_species
+			type = "death_korps"
+		}
+		create_army = {
+			name = "nuke army"
+			owner = event_target:nukeplanetowner
+			species = owner_main_species
+			type = "death_korps"
+		}
+		create_army = {
+			name = "nuke army"
+			owner = event_target:nukeplanetowner
+			species = owner_main_species
+			type = "death_korps"
+		}
+		if = {
+			limit = {
+				num_pops > 20
+			}
+			random_pop = { kill_pop = yes }
+			random_pop = { kill_pop = yes }
+		}
+		if = {
+			limit = {
+				num_pops > 15
+			}
+			random_pop = { kill_pop = yes }
+			random_pop = { kill_pop = yes }
+		}
+		if = {
+			limit = {
+				num_pops > 10
+			}
+			random_pop = { kill_pop = yes }
+			random_pop = { kill_pop = yes }
+		}
+		if = {
+			limit = {
+				num_pops > 5
+			}
+			random_pop = { kill_pop = yes }
+		}
+		if = {
+			limit = {
+				num_pops > 2
+			}
+			random_pop = { kill_pop = yes }
+		}
+	}
+}

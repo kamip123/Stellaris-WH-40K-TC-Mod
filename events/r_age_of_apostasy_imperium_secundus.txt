@@ -1,0 +1,1234 @@
+namespace = ageofapostasyis
+
+country_event = {
+	id = ageofapostasyis.1234
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		country_event = { id = ageofapostasyis.1 days = 250 }
+	}
+}
+
+##### 1 wave
+country_event = {
+	id = ageofapostasyis.1
+	title = "Rebelion"
+	desc = imsecpu.1.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_evt_Rebelion_IG_Fight
+	trigger = {
+		#years_passed > 1
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+				create_species = {
+					name = "Traitor Humans"
+					class = IMB
+					portrait = imp_human
+					traits = random
+				}
+				create_country = {
+					name = "Imperium Secundus"
+					type = "default"
+					species = last_created
+					name_list = "IMPERIUM1"
+					flag = {
+						icon= {
+							category = "human"
+							file = "flag_human_4.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"blue"
+							"orange"
+							"null"
+							"null"
+						}
+					}
+				}
+				every_country = {
+					establish_communications_no_message = last_created_country
+				}
+				every_country = {
+					limit = {
+						has_country_flag = mankind_star_empire
+					}
+					save_event_target_as = mankind_star_empire
+				}	
+				last_created_country = {
+					set_country_flag = mankind_traitor_star_empire
+					set_country_flag = human_empire
+					save_event_target_as = mankind_traitor_star_empire
+					add_modifier = {
+						modifier = human_ships
+						days = -1
+					}
+					add_modifier = {
+						modifier = reduce_ships
+						days = -1
+					}
+					declare_war = {
+						target = event_target:mankind_star_empire
+						name = "Traitors"
+						attacker_war_goal = wg_colossus
+					}
+					add_opinion_modifier = {
+						who = event_target:mankind_star_empire
+						modifier = opinion_traitor_humans
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = mankind_star_empire
+					}
+					add_opinion_modifier = {
+						who = event_target:mankind_traitor_star_empire
+						modifier = opinion_traitor_humans
+					}
+				}
+					
+				every_owned_planet = {
+					limit = {
+						has_ground_combat = no 
+						has_planet_flag = ageofapostasyis1
+					}
+					planet_event = { id = ageofapostasyis.2 }
+				}
+				every_owned_planet = {
+					limit = {
+						has_ground_combat = no 
+						has_planet_flag = ageofapostasyis11
+					}
+					planet_event = { id = ageofapostasyis.3 }
+				}
+				country_event = { id = ageofapostasyis.4 days = 50 }
+				
+				random_planet = {
+					limit = {
+						has_planet_flag = Meghoshtaplanet
+					}
+					solar_system = {
+						spawn_system = {
+							min_distance = 10
+							max_distance = 10
+							initializer = "imperiumsecundinitiali"
+						}
+						spawn_system = {
+							min_distance = 15
+							max_distance = 15
+							initializer = "Rhanda"
+						}
+						spawn_system = {
+							min_distance = 20
+							max_distance = 20
+							initializer = "Cyngni"
+						}
+						spawn_system = {
+							min_distance = 25
+							max_distance = 25
+							initializer = "Perfero"
+						}
+						spawn_system = {
+							min_distance = 30
+							max_distance = 30
+							initializer = "Owanera"
+						}
+					}
+				}
+				every_planet = {
+					limit = {
+						owner = {
+							has_country_flag = mankind_traitor_star_empire
+						}
+					}
+					save_event_target_as = planettospawnfleetqwe
+					owner = { save_event_target_as = armyowner }
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "conscripts"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_small"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					create_army = {
+						name = "Imperial Guard"
+						owner = event_target:armyowner
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}
+					
+						create_fleet = { 
+							name = "Traitor Imperium fleet" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:armyowner
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_SwordC"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_CobraC"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "NAME_BABC"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "NAME_BABCDEF"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "NAME_CABC"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "NAME_CABCD"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "NAME_DABC"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "NAME_DABCD"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:planettospawnfleetqwe
+							}	
+						}
+					
+					
+					
+				}
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+planet_event = {
+	id = ageofapostasyis.2
+	title = "Rebelion"
+	desc = imsecpu.2.desc
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = mankind_traitor_star_empire
+				}
+				save_event_target_as = mankind_traitor_star_empire
+			}
+				while = {
+					count = 2									#was 4
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_korps"
+					}					
+				}
+				while = {
+					count = 2									#was 4
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_planet_imperial_guard"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}					
+				}
+				while = {
+					count = 3									#was 6
+					create_army = {
+						name = "Rebel army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}					
+				}
+				while = {
+					count = 2									#was 4
+					create_army = {
+						name = "Rebel army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_small"
+					}					
+				}
+				while = {
+					count = 4									#was 8
+					create_army = {
+						name = "Rebel army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "conscripts"
+					}					
+				}
+				
+				create_fleet = { name = "Rebel fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:mankind_traitor_star_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_SwordC"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_SwordC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CobraC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_DABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_DABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+planet_event = {
+	id = ageofapostasyis.3
+	title = "Rebelion"
+	desc = imsecpu.3.desc
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = mankind_traitor_star_empire
+				}
+				save_event_target_as = mankind_traitor_star_empire
+			}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_korps"
+					}					
+				}
+				while = {
+					count = 2									#was 4
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "skittari"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_planet_imperial_guard"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}					
+				}
+				while = {
+					count = 10									#was 20
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}					
+				}
+				
+				create_fleet = { name = "Rebel fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:mankind_traitor_star_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_SwordC"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_SwordC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 5
+								create_ship = {
+									name = random
+									design = "NAME_CobraC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_DABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_DABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 2 wave
+country_event = {
+	id = ageofapostasyis.4
+	title = "Rebelion"
+	desc = imsecpu.4.desc
+	picture = GFX_evt_Ecclesiarhy_Priest
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis2
+			}
+			planet_event = { id = ageofapostasyis.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis22
+			}
+			planet_event = { id = ageofapostasyis.3 }
+		}
+		country_event = { id = ageofapostasyis.5 days = 50 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 3 wave
+country_event = {
+	id = ageofapostasyis.5
+	title = "Rebelion"
+	desc = imsecpu.5.desc
+	picture = GFX_evt_Rebelion_Krieg_Fight
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = Hydraphurplanet
+			}
+			planet_event = { id = ageofapostasyis.10 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis3
+			}
+			planet_event = { id = ageofapostasyis.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis33
+			}
+			planet_event = { id = ageofapostasyis.3 }
+		}
+		country_event = { id = ageofapostasyis.6 days = 50 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 4 wave
+country_event = {
+	id = ageofapostasyis.6
+	title = "Rebelion"
+	desc = imsecpu.6.desc
+	picture = GFX_evt_Rebelion_in_Space
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis4
+			}
+			planet_event = { id = ageofapostasyis.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis44
+			}
+			planet_event = { id = ageofapostasyis.3 }
+		}
+		country_event = { id = ageofapostasyis.7 days = 50 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 5 wave
+country_event = {
+	id = ageofapostasyis.7
+	title = "Rebelion"
+	desc = imsecpu.7.desc
+	picture = GFX_evt_Space_Wolves_Jeden
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis5
+			}
+			planet_event = { id = ageofapostasyis.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = ageofapostasyis55
+			}
+			planet_event = { id = ageofapostasyis.3 }
+		}
+		country_event = { id = ageofapostasyis.8 days = 50 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### Fenris attack
+country_event = {
+	id = ageofapostasyis.8
+	title = "Rebelion"
+	desc = imsecpu.8.desc
+	picture = GFX_evt_Space_Wolves_Dwa
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = Fenrisplanet
+			}
+			planet_event = { id = ageofapostasyis.9 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = Midgardiaplanet
+			}
+			planet_event = { id = ageofapostasyis.3 }
+		}
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+planet_event = {
+	id = ageofapostasyis.9
+	title = "Rebelion"
+	desc = imsecpu.9.desc
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = mankind_traitor_star_empire
+				}
+				save_event_target_as = mankind_traitor_star_empire
+			}
+			every_country = {
+				limit = {
+					has_country_flag = mankind_star_empire
+				}
+				save_event_target_as = mankind_star_empire
+			}
+				while = {
+					count = 3									#was 6
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_korps"
+					}					
+				}
+				while = {
+					count = 2									#was 4
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "skittari"
+					}					
+				}
+				while = {
+					count = 3									#was 6
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_planet_imperial_guard"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}					
+				}
+				
+				while = {
+					count = 4
+					create_army = {
+						name = "Space Wolves"
+						owner = event_target:mankind_star_empire
+						species = owner_main_species
+						type = "Space_Wolves"
+					}					
+				}
+				
+				create_fleet = { name = "Rebel fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:mankind_traitor_star_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_SwordC"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_SwordC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_CobraC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 5
+								create_ship = {
+									name = random
+									design = "NAME_DABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 5
+								create_ship = {
+									name = random
+									design = "NAME_DABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+planet_event = {
+	id = ageofapostasyis.10
+	title = "Disaster!!"
+	desc = imsecpu.10.desc
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = mankind_traitor_star_empire
+				}
+				save_event_target_as = mankind_traitor_star_empire
+			}
+			every_country = {
+				limit = {
+					has_country_flag = mankind_star_empire
+				}
+				save_event_target_as = mankind_star_empire
+			}
+			set_controller = event_target:mankind_traitor_star_empire
+			set_owner = event_target:mankind_traitor_star_empire
+				while = {
+					count = 3									#was 6
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_korps"
+					}					
+				}
+				while = {
+					count = 2									#was 4
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "skittari"
+					}					
+				}
+				while = {
+					count = 3									#was 6
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "death_planet_imperial_guard"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_star_empire
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}					
+				}
+				
+				create_fleet = { name = "Rebel fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:mankind_traitor_star_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_SwordC"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "NAME_SwordC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "NAME_CobraC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_BABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_BABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_CABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_DABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_DABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+
+
+
+
+
+
+

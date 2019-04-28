@@ -1,0 +1,634 @@
+
+namespace = testxdxd
+
+planet_event = {
+	id = testxdxd.1
+	title = "test"
+	desc = "spawn army"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+	
+	immediate = {	
+		create_country = {
+			name = "Chaos"
+			type = faction
+		}
+		create_species = {
+			name = "Chaos"
+			class = random
+			portrait = random
+			traits = random
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "chaos_imperial_knight"
+		}
+	}
+	
+	option = {
+		name = "To Arms!"
+	}
+}
+
+planet_event = {
+	id = testxdxd.2
+	title = "test"
+	desc = "spawn army"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+	
+	immediate = {	
+		create_country = {
+			name = "Chaos"
+			type = faction
+		}
+		create_species = {
+			name = "Chaos"
+			class = random
+			portrait = random
+			traits = random
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = last_created
+			species = last_created
+			type = "assault_army"
+		}
+	}
+	
+	option = {
+		name = "To Arms!"
+	}
+}

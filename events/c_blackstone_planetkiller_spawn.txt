@@ -1,0 +1,499 @@
+namespace = blackplanespaw
+
+country_event = {
+	id = blackplanespaw.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		#has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = mankind_star_empire
+			}
+			country_event = { id = blackplanespaw.2 days = 1 }
+		}	
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = blackplanespaw.2
+	title = "Blackstone Fortress"
+	desc = "blackstone fortress just destroyed one of our planet!"
+	#fire_only_once = yes
+	is_triggered_only = yes
+	location = event_target:planettobedestryed
+	trigger = {
+		#has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				or = {
+					has_planet_flag = twelveblackcrusade1
+					has_planet_flag = twelveblackcrusade11
+					has_planet_flag = twelveblackcrusade2
+					has_planet_flag = twelveblackcrusade22
+					has_planet_flag = twelveblackcrusade3
+					has_planet_flag = twelveblackcrusade33
+					has_planet_flag = twelveblackcrusade4
+					has_planet_flag = twelveblackcrusade44
+					has_planet_flag = twelveblackcrusade5
+					has_planet_flag = twelveblackcrusade55
+					has_planet_flag = twelveblackcrusade6
+					has_planet_flag = twelveblackcrusade66
+					has_planet_flag = twelveblackcrusade7
+					has_planet_flag = twelveblackcrusade77
+				}				
+			}
+			save_event_target_as = planettobedestryed
+			
+			#### FIX NEED
+			#planet_event = { id = exterminatusxd.3 }
+			planet_event = { id = blackplanespaw.3 days = 3 }
+			
+						every_country = {
+							limit = {
+								has_country_flag = to_recive_blackstone_fortress_chaos
+							}
+							save_event_target_as = to_recive_blackstone_fortress_chaos
+						}
+						
+						create_fleet = { 
+							name = "Blackstone Fortress" 
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 20000
+						}
+			
+						last_created_fleet = {
+							set_owner = event_target:to_recive_blackstone_fortress_chaos
+							create_ship = {
+								name = random
+								design = "Blackstonefotress"
+								graphical_culture = "chaoss_01"
+							}
+							set_location = {
+								target = event_target:planettobedestryed
+								distance = 40
+								angle = random
+							}
+						}
+			
+						create_fleet = { name = "Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:to_recive_blackstone_fortress_chaos
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = event_target:planettobedestryed
+								distance = 40
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+		}	
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = blackplanespaw.3
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		change_pc = pc_destroyedplanet
+		every_planet_army = { remove_army = yes }
+		destroy_colony = { keep_buildings = no }
+	}
+}
+
+planet_event = {
+	id = blackplanespaw.10
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = to_recive_blackstone_fortress
+			}
+			save_event_target_as = to_recive_blackstone_fortress
+		}
+		
+		create_fleet = { 
+			name = "Blackstone Fortress" 
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 20000
+		}
+				
+		last_created_fleet = {
+			set_owner = event_target:to_recive_blackstone_fortress
+			create_ship = {
+				name = random
+				design = "Blackstonefotress"
+				graphical_culture = "chaoss_01"
+			}
+			set_location = {
+				target = root
+				distance = 40
+				angle = random
+			}
+		}
+	}
+}
+
+country_event = {
+	id = blackplanespaw.11
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire
+		}
+		
+		if = {
+			limit = {
+				random_owned_planet = {
+					or = {
+						has_planet_flag = twelveblackcrusade1
+						has_planet_flag = twelveblackcrusade11
+						has_planet_flag = twelveblackcrusade2
+						has_planet_flag = twelveblackcrusade22
+						has_planet_flag = twelveblackcrusade3
+						has_planet_flag = twelveblackcrusade33
+						has_planet_flag = twelveblackcrusade4
+						has_planet_flag = twelveblackcrusade44
+						has_planet_flag = twelveblackcrusade5
+						has_planet_flag = twelveblackcrusade55
+						has_planet_flag = twelveblackcrusade6
+						has_planet_flag = twelveblackcrusade66
+						has_planet_flag = twelveblackcrusade7
+						has_planet_flag = twelveblackcrusade77
+					}				
+				}	
+			}
+			random_owned_planet = {
+				limit = {
+					or = {
+						has_planet_flag = twelveblackcrusade1
+						has_planet_flag = twelveblackcrusade11
+						has_planet_flag = twelveblackcrusade2
+						has_planet_flag = twelveblackcrusade22
+						has_planet_flag = twelveblackcrusade3
+						has_planet_flag = twelveblackcrusade33
+						has_planet_flag = twelveblackcrusade4
+						has_planet_flag = twelveblackcrusade44
+						has_planet_flag = twelveblackcrusade5
+						has_planet_flag = twelveblackcrusade55
+						has_planet_flag = twelveblackcrusade6
+						has_planet_flag = twelveblackcrusade66
+						has_planet_flag = twelveblackcrusade7
+						has_planet_flag = twelveblackcrusade77
+					}				
+				}
+				#planet_event = { id = exterminatusxd.2 }
+				planet_event = { id = blackplanespaw.3 days = 3 }
+			
+				save_event_target_as = planettospawnplanetkiller
+				
+				create_fleet = { 
+					name = "Planet Killer" 
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 20000
+				}
+						
+				last_created_fleet = {
+					set_owner = event_target:eyechaos_empire
+					create_ship = {
+						name = random
+						design = "planetkiller"
+						graphical_culture = "chaoss_01"
+					}
+					set_location = {
+						target = event_target:planettospawnplanetkiller
+						distance = 40
+						angle = random
+					}
+				}
+						create_fleet = { name = "Chaos fleet" }	
+						
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = event_target:planettospawnplanetkiller
+								distance = 40
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+				
+			}
+			
+			else = {
+				random_owned_planet = {
+					limit = {
+						NOT = {
+							or = {
+								has_planet_flag = Marsplanet
+								has_planet_flag = Cadiaplanet
+								has_planet_flag = spacemarinehomeworld
+							}
+							
+						}
+					}
+					set_timed_planet_flag = {
+						flag = planet_to_spawn_planetkiler_event
+						days = 10
+					}
+					save_event_target_as = planettospawnplanetkiller
+					#planet_event = { id = exterminatusxd.2 }
+					planet_event = { id = blackplanespaw.3 days = 3 }
+					
+					create_fleet = { 
+						name = "Planet Killer" 
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 20000
+					}
+							
+					last_created_fleet = {
+						set_owner = event_target:eyechaos_empire
+						create_ship = {
+							name = random
+							design = "planetkiller"
+							graphical_culture = "chaoss_01"
+						}
+						set_location = {
+							target = event_target:planettospawnplanetkiller
+							distance = 40
+							angle = random
+						}
+					}
+						
+						create_fleet = { name = "Chaos fleet" }	
+						
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = event_target:planettospawnplanetkiller
+								distance = 40
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+				}
+			}
+		}	
+
+		
+		
+	}
+}
+
+
+

@@ -1,0 +1,2742 @@
+
+namespace = chaosdawnofwar
+
+planet_event = {
+	id = chaosdawnofwar.2
+	title = "Aurelia Sub Sector"
+	desc = dow1.1.desc
+	picture = GFX_evt_Warp_Devour_Planet
+	fire_only_once = yes
+	location = ROOT
+	#is_triggered_only = yes
+	trigger = {
+		has_planet_flag = Aureliaplanet
+		years_passed > 2
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		destroy_colony = { keep_buildings = no }
+		change_pc = pc_emptyplanet
+	}
+	
+	option = {
+		name = "Terrible news..."
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.5
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		years_passed > 12
+		has_planet_flag = Cyreneplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = chaosdawnofwar.6
+	title = "Aurelia Sub Sector"
+	desc = dow1.2.desc
+	picture = GFX_evt_Chaos_Rising
+	fire_only_once = yes
+	location = FROM
+	#is_triggered_only = yes
+	
+	trigger = {
+		years_passed > 12
+		#has_planet_flag = Cyreneplanet
+		has_country_flag = mankind_star_empire
+		any_owned_planet = {
+			has_planet_flag = Cyreneplanet
+		}
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = "Exterminatus is the only solution"
+		country_event = { id = chaosdawnofwar.7 }
+	}
+	option = {
+		name = "We can not do that! Prepare to fight chaos creatures!"
+		country_event = { id = chaosdawnofwar.11 }
+	}
+}
+
+country_event = {
+	id = chaosdawnofwar.7
+	hide_window = yes
+	#fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = Cyreneplanet
+			}
+			planet_event = { id = chaosdawnofwar.8 }
+		}
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.8
+	title = "Aurelia Sub Sector"
+	desc = dow1.3.desc
+	picture = GFX_evt_Exterminatus_Dwa
+	fire_only_once = yes
+	location = ROOT
+	is_triggered_only = yes
+	trigger = {
+	}
+	
+	immediate = {
+		destroy_colony = { keep_buildings = no }
+		change_pc = pc_nuked
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = chaosdawnofwar.11
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				Or = {
+					has_planet_flag = TyphonPrimarisplanet
+					has_planet_flag = Calderisplanet
+				}
+			}
+			planet_event = { id = chaosdawnofwar.12 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				Or = {
+					has_planet_flag = Cyreneplanet
+					has_planet_flag = Meridianplanet
+				}
+			}
+			planet_event = { id = chaosdawnofwar.13 }
+		}
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.12
+	title = "Chaos forces!"
+	desc = dow1.4.desc
+	picture = GFX_evt_Space_Battle_Chaos_Imperium
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+	}
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 6
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.13
+	title = "Chaos forces!"
+	desc = dow1.5.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+	}
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Black_Legion"
+					}					
+				}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "World_Eaters"
+					}					
+				}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Word_Bearers"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+planet_event = {
+	id = chaosdawnofwar.20
+	title = "Aurelia Sub Sector"
+	desc = dow1.6.desc
+	picture = GFX_evt_Praetorian_Guard_Tallarn_Orks
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 13
+		has_ground_combat = no 
+		has_planet_flag = Calderisplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = ghazgkull_empire
+				}
+				save_event_target_as = ghazgkull_empire
+			}
+
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Kommandoz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Gretchin"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Boyz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Stormboyz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Nobz"
+								}
+							}
+							
+				create_fleet = { name = "Ork fleet" }	
+				last_created_fleet = {
+					set_owner = event_target:ghazgkull_empire
+							create_ship = {
+								name = random
+								design = "NAME_OCCABC"
+								graphical_culture = "orc_01"
+							}	
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_OCCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OBABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OBABCD"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OCABCD"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_ODABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+				}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+
+
+planet_event = {
+	id = chaosdawnofwar.21
+	hide_window = yes
+	location = ROOT
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = { save_event_target_as = planetownersm1 }
+		create_army = {
+			name = "Space Marines"
+			owner = event_target:planetownersm1
+			species = owner_main_species
+			type = "Blood_Ravens"
+		}
+		create_army = {
+			name = "Space Marines"
+			owner = event_target:planetownersm1
+			species = owner_main_species
+			type = "Blood_Ravens"
+		}
+		create_army = {
+			name = "Space Marines"
+			owner = event_target:planetownersm1
+			species = owner_main_species
+			type = "Blood_Ravens"
+		}
+	}
+}	
+
+planet_event = {
+	id = chaosdawnofwar.22
+	title = "Aurelia Sub Sector"
+	desc = dow1.7.desc
+	picture = GFX_evt_throne_room
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 13
+		has_ground_combat = no 
+		has_planet_flag = Meridianplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = ghazgkull_empire
+				}
+				save_event_target_as = ghazgkull_empire
+			}
+							while = {
+								count = 1
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Stompa"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Gargant"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Kommandoz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Gretchin"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Boyz"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Stormboyz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Nobz"
+								}
+							}
+							create_fleet = { name = "Ork fleet" }	
+				last_created_fleet = {
+					set_owner = event_target:ghazgkull_empire
+							create_ship = {
+								name = random
+								design = "NAME_OCCABC"
+								graphical_culture = "orc_01"
+							}	
+							while = {
+								count = 6
+								create_ship = {
+									name = random
+									design = "NAME_OCCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OBABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OCABCD"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_ODABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+				}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.23
+	title = "Aurelia Sub Sector"
+	desc = dow1.8.desc
+	picture = GFX_evt_throne_room
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 13
+		has_ground_combat = no 
+		has_planet_flag = TyphonPrimarisplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = ghazgkull_empire
+				}
+				save_event_target_as = ghazgkull_empire
+			}
+
+							while = {
+								count = 1
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Kommandoz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Gretchin"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Boyz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Stormboyz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Nobz"
+								}
+							}
+							create_fleet = { name = "Ork fleet" }	
+				last_created_fleet = {
+					set_owner = event_target:ghazgkull_empire
+							create_ship = {
+								name = random
+								design = "NAME_OCCABC"
+								graphical_culture = "orc_01"
+							}	
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_OCCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OBABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OCABCD"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_ODABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+				}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.24
+	title = "Aurelia Sub Sector"
+	desc = dow1.9.desc
+	picture = GFX_evt_throne_room
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 13
+		has_ground_combat = no 
+		has_planet_flag = Cyreneplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = ghazgkull_empire
+				}
+				save_event_target_as = ghazgkull_empire
+			}
+							while = {
+								count = 1
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Stompa"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Kommandoz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Gretchin"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Boyz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Stormboyz"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Orks"
+									owner = event_target:ghazgkull_empire
+									species = last_created
+									type = "Ork_Nobz"
+								}
+							}
+							create_fleet = { name = "Ork fleet" }	
+				last_created_fleet = {
+					set_owner = event_target:ghazgkull_empire
+							create_ship = {
+								name = random
+								design = "NAME_OCCABC"
+								graphical_culture = "orc_01"
+							}	
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_OCCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OBABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OCABCD"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_ODABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+				}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.25
+	title = "Aurelia Sub Sector"
+	desc = dow1.10.desc
+	picture = GFX_evt_Eldar_Lore
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 16
+		has_ground_combat = no 
+		has_planet_flag = TyphonPrimarisplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = eldar_ulthwe_empire
+				}
+				save_event_target_as = eldar_ulthwe_empire
+			}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Phantom_Titan"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Cobra"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Falcon"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Howling_Banshee"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Guardian_Squad"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Ranger_Squad"
+								}
+							}
+							
+							create_fleet = { name = "Eldar fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_ECCABC"
+								graphical_culture = "eldar_01"
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_ECCABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_EBABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_EBABCD"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_ECABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_EDABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+						}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.26
+	title = "Aurelia Sub Sector"
+	desc = dow1.11.desc
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 16
+		has_ground_combat = no 
+		has_planet_flag = Meridianplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = eldar_ulthwe_empire
+				}
+				save_event_target_as = eldar_ulthwe_empire
+			}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Phantom_Titan"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Wraithlord"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Cobra"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Falcon"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Howling_Banshee"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Guardian_Squad"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Ranger_Squad"
+								}
+							}
+							create_fleet = { name = "Eldar fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_ECCABC"
+								graphical_culture = "eldar_01"
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_ECCABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_EBABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_EBABCD"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_ECABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_EDABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+						}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.27
+	title = "Aurelia Sub Sector"
+	desc = dow1.12.desc
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 16
+		has_ground_combat = no 
+		has_planet_flag = Cyreneplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = eldar_ulthwe_empire
+				}
+				save_event_target_as = eldar_ulthwe_empire
+			}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Phantom_Titan"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Cobra"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Falcon"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Howling_Banshee"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Guardian_Squad"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Ranger_Squad"
+								}
+							}
+							create_fleet = { name = "Eldar fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_ECCABC"
+								graphical_culture = "eldar_01"
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_ECCABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_EBABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_ECABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_EDABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+						}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.28
+	title = "Aurelia Sub Sector"
+	desc = dow1.13.desc
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 16
+		has_ground_combat = no 
+		has_planet_flag = Calderisplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		every_country = {
+				limit = {
+					has_country_flag = eldar_ulthwe_empire
+				}
+				save_event_target_as = eldar_ulthwe_empire
+			}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Phantom_Titan"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Cobra"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Falcon"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Howling_Banshee"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Guardian_Squad"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Eldar army"
+									owner = event_target:eldar_ulthwe_empire
+									species = last_created
+									type = "Ranger_Squad"
+								}
+							}
+							
+							create_fleet = { name = "Eldar fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_ECCABC"
+								graphical_culture = "eldar_01"
+							}
+							while = {
+								count = 6
+								create_ship = {
+									name = random
+									design = "NAME_ECCABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_EBABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_ECABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_EDABC"
+									graphical_culture = "eldar_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagharmag.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+						}
+	}
+	
+	option = {
+		name = "Send space marines"
+		planet_event = { id = chaosdawnofwar.21 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Prepare for defence"
+	}
+}
+
+country_event = {
+	id = chaosdawnofwar.50
+	title = "Aurelia Sub Sector"
+	desc = dow1.14.desc
+	picture = GFX_evt_tyranid_invasion
+	fire_only_once = yes
+	
+	trigger = {
+		years_passed > 18
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Prepare to fight!"
+		country_event = { id = chaosdawnofwar.61 }
+	}
+}
+
+country_event = {
+	id = chaosdawnofwar.61
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				Or = {
+					has_planet_flag = TyphonPrimarisplanet
+					has_planet_flag = Calderisplanet
+				}
+			}
+			planet_event = { id = chaosdawnofwar.62 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				Or = {
+					has_planet_flag = Cyreneplanet
+					has_planet_flag = Meridianplanet
+				}
+			}
+			planet_event = { id = chaosdawnofwar.63 }
+		}
+		
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.62
+	title = "Tyranids!"
+	desc = dow1.15.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+	}
+	
+	immediate = {
+		create_country = {
+			name = "Tyranids"
+			type = faction
+		}
+		create_species = {
+			name = "Tyranids"
+			class = random
+			portrait = random
+			traits = random
+		}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Dominatrix"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Hive_Tyrant"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Swarmlord"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Lictor"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Exocrine"
+								}
+							}
+							while = {
+								count = 3
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Hormagaunt"
+								}
+							}
+							while = {
+								count = 2
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Tyranid_Warrior"
+								}
+							}
+							
+							create_leader = {
+								type = admiral
+								species = last_created
+								name = random
+								skill = 500
+								set_age = 10
+								traits = {
+									trait = leader_trait_void_swimmer
+								}
+						}	
+						create_fleet = {
+							name = "Tyranid hive fleet"
+							effect = {
+								set_owner = last_created
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "tyranid_01"
+								}
+								assign_leader = last_created_leader
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Death's Head"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "Bug Crusher"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								set_location = {
+									target = ROOT
+									distance = 0
+									angle = random
+								}
+								
+								set_aggro_range = 500
+								set_fleet_stance = passive
+								set_aggro_range_measure_from = self
+								
+								############# need testing
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "tyranid.60.trigger.2"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}			
+							}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.63
+	title = "Tyranids!"
+	desc = dow1.16.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+	}
+	
+	immediate = {
+		create_country = {
+			name = "Tyranids"
+			type = faction
+		}
+		create_species = {
+			name = "Tyranids"
+			class = random
+			portrait = random
+			traits = random
+		}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Dominatrix"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Hive_Tyrant"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Swarmlord"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Lictor"
+								}
+							}
+							while = {
+								count = 1
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Exocrine"
+								}
+							}
+							while = {
+								count = 5
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Hormagaunt"
+								}
+							}
+							while = {
+								count = 5
+								create_army = {
+									name = "Tyranid army"
+									owner = last_created
+									species = last_created
+									type = "Tyranid_Warrior"
+								}
+							}
+							create_leader = {
+								type = admiral
+								species = last_created
+								name = random
+								skill = 500
+								set_age = 10
+								traits = {
+									trait = leader_trait_void_swimmer
+								}
+						}	
+						create_fleet = {
+							name = "Tyranid hive fleet"
+							effect = {
+								set_owner = last_created
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "tyranid_01"
+								}
+								assign_leader = last_created_leader
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Death's Head"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "Bug Crusher"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								set_location = {
+									target = ROOT
+									distance = 0
+									angle = random
+								}
+								
+								set_aggro_range = 500
+								set_fleet_stance = passive
+								set_aggro_range_measure_from = self
+								
+								############# need testing
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "tyranid.60.trigger.2"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}			
+							}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.79
+	title = "Aurelia Sub Sector"
+	desc = dow1.17.desc
+	picture = GFX_evt_ice_planet
+	fire_only_once = yes
+	location = ROOT
+	trigger = {
+		years_passed > 20
+		has_planet_flag = Aureliaplanet
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire
+		}
+		change_pc = pc_arctic
+		set_controller = event_target:eyechaos_empire
+		set_owner = event_target:eyechaos_empire
+		planet_event = { id = chaosdawnofwar.80 }
+	}
+	
+	option = {
+		name = "Send troops to check this!"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.80
+	title = "Chaos forces!"
+	desc = dow1.18.desc
+	picture = GFX_evt_Chaos_Attack_Planet
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+		
+	}
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_warhound_titan"
+					}					
+				}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_reaver_titan"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 3
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+
+country_event = {
+	id = chaosdawnofwar.81
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		years_passed > 20
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				Or = {
+					has_planet_flag = TyphonPrimarisplanet
+					has_planet_flag = Calderisplanet
+				}
+			}
+			planet_event = { id = chaosdawnofwar.82 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				Or = {
+					has_planet_flag = Cyreneplanet
+					has_planet_flag = Meridianplanet
+				}
+			}
+			planet_event = { id = chaosdawnofwar.83 }
+		}
+		
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.82
+	title = "Chaos forces!"
+	desc = dow1.19.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+	}
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_reaver_titan"
+					}					
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 3
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = chaosdawnofwar.83
+	title = "Chaos forces!"
+	desc = dow1.20.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+	}
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+			while = {
+					count = 1
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_imperial_knight"
+					}					
+				}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_warhound_titan"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 12
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}

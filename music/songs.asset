@@ -1,0 +1,68 @@
+music = {
+	name = "allisdust"
+	file = "allisdust.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "ecclesiarchy"
+	file = "ecclesiarchy.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "bloodofsanguinius"
+	file = "bloodofsanguinius.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "horus"
+	file = "horus.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "deathofhorus"
+	file = "deathofhorus.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "tts_end_theme"
+	file = "tts_end_theme.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "inquisitor_soundtrack"
+	file = "inquisitor_soundtrack.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "dow_chant"
+	file = "dow_chant.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "tts_that_centurion"
+	file = "tts_that_centurion.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "marsz_pierwszej_brygady"
+	file = "marsz_pierwszej_brygady.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "szara_piechota_marsz"
+	file = "szara_piechota_marsz.ogg"
+	volume = 0.80
+}
+
+
+

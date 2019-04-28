@@ -1,0 +1,39 @@
+
+namespace = chaosww
+
+country_event = {
+	id = chaosww.1
+	hide_window = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				is_country_type = default
+			}
+			establish_communications_no_message = root
+		}		
+	}
+}
+
+country_event = {
+	id = chaosww.2
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = default
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				is_country_type = default
+			}
+			country_event = { id = chaosww.1 }
+		}		
+	}
+}

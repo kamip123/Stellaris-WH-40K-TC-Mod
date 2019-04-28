@@ -1,0 +1,481 @@
+namespace = trzynastablackcrusade
+
+
+country_event = {
+	id = trzynastablackcrusade.50
+	title = "Huge Warp Storm!"
+	desc = bc13.5.desc
+	picture = GFX_evt_Cicatrix_Maledictum
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				has_planet_flag = cicatrixmaledictumsystem
+			}
+			planet_event = { id = trzynastablackcrusade.51 }
+			planet_event = { id = trzynastablackcrusade.52 }
+		}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = trzynastablackcrusade.51
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire
+		}
+		create_fleet = { 
+			name = "Warp Chaos Portal" 
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 20000
+		}	
+		last_created_fleet = {
+			set_owner = event_target:eyechaos_empire
+			create_ship = {
+			name = random
+				design = "Chaos_Warp_Storm"
+				graphical_culture = "extra_dimensional_01"
+			}
+			set_location = {
+				target = ROOT
+				distance = 40
+				angle = random
+			}
+		}
+	}
+	
+}
+
+planet_event = {
+	id = trzynastablackcrusade.52
+	title = "Warp Storm!"
+	desc = bc13.6.desc
+	picture = GFX_evt_Warp_Storm
+	is_triggered_only = yes
+	location = ROOT
+	
+	trigger = {
+		has_ground_combat = no 
+		exists = owner
+	}
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+			while = {
+					count = 1									#was 2
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_imperial_knight"
+					}					
+				}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Titan"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "chaos_warhound_titan"
+					}					
+				}
+				#while = {
+				#	count = 1
+				#	create_army = {
+				#		name = "Chaos Titan"
+				#		owner = event_target:eyechaos_empire
+				#		species = owner_main_species
+				#		type = "chaos_reaver_titan"
+				#	}					
+				#}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				create_fleet = { name = "Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+
+
+
+country_event = {
+	id = trzynastablackcrusade.1
+	title = "Chaos forces!"
+	desc = bc1.1.desc
+	picture = GFX_evt_Trzynasta_Black_Crusade
+	fire_only_once = yes
+
+	trigger = {
+		years_passed > 31
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				Or = {
+					has_planet_flag = firstblackcrusade
+					has_planet_flag = trzynastablackcrusade
+					has_planet_flag = cadiasectorblackcrusade
+				}
+			}
+			planet_event = { id = firstblackcrusade.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_planet_flag = Cadiaplanet
+			}
+			if = {
+				limit = {
+					has_ground_combat = yes
+				}
+				owner = {
+					country_event = { id = trzynastablackcrusade.2 days = 30 }
+				}
+				else = {
+					planet_event = { id = trzynastablackcrusade.3 }
+					planet_event = { id = trzynastablackcrusade.3 days = 360 }
+					planet_event = { id = trzynastablackcrusade.3 days = 720 }
+					planet_event = { id = trzynastablackcrusade.3 days = 1080 }
+				}
+			}
+		}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = trzynastablackcrusade.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_planet_flag = Cadiaplanet
+			}
+			if = {
+				limit = {
+					has_ground_combat = yes
+				}
+				owner = {
+					country_event = { id = trzynastablackcrusade.2 days = 30 }
+				}
+				else = {
+					planet_event = { id = trzynastablackcrusade.3 }
+					planet_event = { id = trzynastablackcrusade.3 days = 360 }
+					planet_event = { id = trzynastablackcrusade.3 days = 720 }
+					planet_event = { id = trzynastablackcrusade.3 days = 1080 }
+				}
+			}
+		}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = trzynastablackcrusade.3
+	title = "Chaos forces!"
+	desc = bc1.3.desc
+	picture = GFX_evt_Chaos_Attack_Cadia
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+		has_planet_flag = Cadiaplanet
+	}
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Cultists"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 5									#was 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 2									#was 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Defilers"
+					}					
+				}
+				while = {
+					count = 2									#was 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				while = {
+					count = 2									#was 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Greater_Daemons"
+					}					
+				}
+				create_army = {
+					name = "Chaos Space Marine"
+					owner = event_target:eyechaos_empire
+					species = owner_main_species
+					type = "Emperors_Children"
+				}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "Iron_Warriors"
+				#}
+				create_army = {
+					name = "Chaos Space Marine"
+					owner = event_target:eyechaos_empire
+					species = owner_main_species
+					type = "Night_Lords"
+				}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "World_Eaters"
+				#}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "Death_Guard"
+				#}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "Thousand_Sons"
+				#}
+				create_army = {
+					name = "Chaos Space Marine"
+					owner = event_target:eyechaos_empire
+					species = owner_main_species
+					type = "Black_Legion"
+				}
+				create_army = {
+					name = "Chaos Space Marine"
+					owner = event_target:eyechaos_empire
+					species = owner_main_species
+					type = "Word_Bearers"
+				}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "Alpha_Legion"
+				#}
+				create_army = {
+					name = "Chaos Space Marine"
+					owner = event_target:eyechaos_empire
+					species = owner_main_species
+					type = "chaos_imperial_knight"
+				}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "chaos_warhound_titan"
+				#}
+				create_army = {
+					name = "Chaos Space Marine"
+					owner = event_target:eyechaos_empire
+					species = owner_main_species
+					type = "chaos_warhound_titan"
+				}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "chaos_reaver_titan"
+				#}
+				create_army = {
+					name = "Chaos Space Marine"
+					owner = event_target:eyechaos_empire
+					species = owner_main_species
+					type = "chaos_warlord_titan"
+				}
+				#create_army = {
+				#	name = "Chaos Space Marine"
+				#	owner = event_target:eyechaos_empire
+				#	species = owner_main_species
+				#	type = "chaos_emperor_titan"
+				#}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+

@@ -1,0 +1,202 @@
+namespace = fleetwarpevents
+
+ship_event = {
+	id = fleetwarpevents.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FromFrom = {
+			has_country_flag = human_empire
+		}
+	}
+	
+	immediate = {
+		reduce_hp_percent = 5
+	}
+}
+
+ship_event = {
+	id = fleetwarpevents.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FromFrom = {
+			has_country_flag = human_empire
+		}
+	}
+	
+	immediate = {
+		reduce_hp_percent = 10
+	}
+}
+
+ship_event = {
+	id = fleetwarpevents.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FromFrom = {
+			has_country_flag = human_empire
+		}
+	}
+	
+	immediate = {
+		reduce_hp_percent = 20
+	}
+}
+
+ship_event = {
+	id = fleetwarpevents.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FromFrom = {
+			has_country_flag = human_empire
+		}
+	}
+	
+	immediate = {
+		reduce_hp_percent = 30
+	}
+}
+
+ship_event = {
+	id = fleetwarpevents.5
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FromFrom = {
+			has_country_flag = human_empire
+		}
+	}
+	
+	immediate = {
+		fleet = {
+			fleet_event = { id = fleetwarpevents.6 }
+		}
+	}
+}
+
+fleet_event = {
+	id = fleetwarpevents.9999
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				num_ships < 10
+				NOT = {
+					has_fleet_flag = dont_trigger_again_please_warp_event
+				}
+			}
+			set_fleet_flag = fleet_small_destroy_some_ships
+			set_timed_fleet_flag = {
+				flag = dont_trigger_again_please_warp_event
+				days = 1
+			}
+			random_owned_ship = {
+				limit = {
+					fleet = {
+						has_fleet_flag = fleet_small_destroy_some_ships
+					}
+				}
+				reduce_hp_percent = 100
+				fleet = { remove_fleet_flag = fleet_small_destroy_some_ships }
+			}
+		}
+		if = {
+			limit = {
+				num_ships < 20
+				num_ships > 10
+				NOT = {
+					has_fleet_flag = dont_trigger_again_please_warp_event
+				}
+			}
+			set_fleet_flag = fleet_small_destroy_some_ships
+			set_timed_fleet_flag = {
+				flag = dont_trigger_again_please_warp_event
+				days = 1
+			}
+			random_owned_ship = {
+				limit = {
+					fleet = {
+						has_fleet_flag = fleet_small_destroy_some_ships
+					}
+				}
+				reduce_hp_percent = 100
+				fleet = { remove_fleet_flag = fleet_small_destroy_some_ships }
+			}
+			random_owned_ship = {
+				limit = {
+					fleet = {
+						has_fleet_flag = fleet_small_destroy_some_ships
+					}
+				}
+				reduce_hp_percent = 100
+				fleet = { remove_fleet_flag = fleet_small_destroy_some_ships }
+			}
+		}
+		if = {
+			limit = {
+				num_ships > 20
+				num_ships < 40
+				NOT = {
+					has_fleet_flag = dont_trigger_again_please_warp_event
+				}
+			}
+			set_fleet_flag = fleet_small_destroy_some_ships
+			set_timed_fleet_flag = {
+				flag = dont_trigger_again_please_warp_event
+				days = 1
+			}
+			random_owned_ship = {
+				limit = {
+					fleet = {
+						has_fleet_flag = fleet_small_destroy_some_ships
+					}
+				}
+				reduce_hp_percent = 100
+				fleet = { remove_fleet_flag = fleet_small_destroy_some_ships }
+			}
+			random_owned_ship = {
+				limit = {
+					fleet = {
+						has_fleet_flag = fleet_small_destroy_some_ships
+					}
+				}
+				reduce_hp_percent = 100
+				fleet = { remove_fleet_flag = fleet_small_destroy_some_ships }
+			}
+			random_owned_ship = {
+				limit = {
+					fleet = {
+						has_fleet_flag = fleet_small_destroy_some_ships
+					}
+				}
+				reduce_hp_percent = 100
+				fleet = { remove_fleet_flag = fleet_small_destroy_some_ships }
+			}
+			random_owned_ship = {
+				limit = {
+					fleet = {
+						has_fleet_flag = fleet_small_destroy_some_ships
+					}
+				}
+				reduce_hp_percent = 100
+				fleet = { remove_fleet_flag = fleet_small_destroy_some_ships }
+			}
+		}
+	}
+}

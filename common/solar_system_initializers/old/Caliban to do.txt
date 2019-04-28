@@ -1,0 +1,65 @@
+@distance = 30
+@base_moon_distance = 10
+
+
+Caliban = {
+    name = "Caliban"
+    class = "pc_b_star"
+
+
+	class = "sc_g"
+	
+	planet = {
+		name = "Caliban"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 13
+		has_ring = no
+	}
+	
+	planet = {
+        class = random
+        orbit_distance = 30
+        orbit_angle = 304
+        has_ring = no
+
+    }
+
+    planet = {
+        class = random
+        orbit_distance = 30
+        orbit_angle = 148
+        has_ring = no
+
+    }
+
+    planet = {
+        name = "Caliban"
+        class = "pc_asteroid"
+        orbit_distance = 30
+        orbit_angle = 273
+		has_ring = no
+
+		size = 10
+		
+		deposit_blockers = none				# Changde by mvd1984 
+ 		init_effect = {
+			set_planet_flag = Calibanplanet			
+		}
+    }
+
+    planet = {
+        class = random
+        orbit_distance = 26
+        orbit_angle = 258
+        has_ring = no
+    }
+	
+	planet = {
+        class = random
+        orbit_distance = 26
+        orbit_angle = 258
+        has_ring = no
+    }
+}

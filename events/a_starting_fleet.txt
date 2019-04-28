@@ -1,0 +1,2427 @@
+namespace = startingfleetsforempires
+
+############### trigger
+
+country_event = {
+	id = startingfleetsforempires.90
+	hide_window = yes
+	fire_only_once = yes
+	#is_triggered_only = yes
+	trigger = {
+
+	}
+	
+	immediate = {
+		country_event = { id = startingfleetsforempires.1 }
+		country_event = { id = startingfleetsforempires.2 }
+		country_event = { id = startingfleetsforempires.3 }
+		country_event = { id = startingfleetsforempires.4 }
+		country_event = { id = startingfleetsforempires.5 }
+		country_event = { id = startingfleetsforempires.6 }
+		country_event = { id = startingfleetsforempires.7 }
+		country_event = { id = startingfleetsforempires.8 }
+		country_event = { id = startingfleetsforempires.9 }
+		country_event = { id = startingfleetsforempires.10 }
+		country_event = { id = startingfleetsforempires.11 }
+		country_event = { id = startingfleetsforempires.12 }
+		country_event = { id = startingfleetsforempires.99 }
+	}
+}	
+
+
+
+##### CHAOS
+
+country_event = {
+	id = startingfleetsforempires.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = chaos_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Chaos fleet" }
+				
+						last_created_fleet = {
+							
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 32
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 16
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								#distance = 0
+								#angle = random
+							}
+						}	
+			}
+		}	
+	}
+}	
+
+
+##### ELDAR
+
+country_event = {
+	id = startingfleetsforempires.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eldar_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				
+						create_fleet = { name = "Eldar Craftworld" }
+						
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Craftworld_Ship"
+								graphical_culture = "eldar_01"
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+							
+							
+				create_fleet = { name = "Eldar fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "eldar_01"
+							}
+							while = {
+								count = 40
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "eldar_01"
+								}
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "eldar_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+	
+# DARK ELDAR	
+
+country_event = {
+	id = startingfleetsforempires.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = darkeldar_empire
+			}
+			capital_scope = {
+			save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Dark eldar fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "darkeldar_01"
+							}
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "darkeldar_01"
+							}
+							while = {
+								count = 40
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+####ORK
+
+country_event = {
+	id = startingfleetsforempires.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ork_empire
+			}
+			capital_scope = {
+			save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Ork fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "orc_01"
+							}
+							while = {
+								count = 30
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "orc_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+
+
+###### TAU
+
+country_event = {
+	id = startingfleetsforempires.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = tau_empire
+			}
+			
+			capital_scope = {
+			save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Tau fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "tau_01"
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "tau_01"
+								}
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "tau_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "tau_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "tau_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "tau_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "tau_01"
+								}
+							}
+							while = {
+								count = 16
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "tau_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+#NECRON
+
+country_event = {
+	id = startingfleetsforempires.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necron_empire
+			}
+			capital_scope = {
+			save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Necron fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "necron_01"
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 12
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "necron_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}
+	}
+}
+
+########## helgramite
+
+country_event = {
+	id = startingfleetsforempires.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = hellgrammite_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Hellgramite fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "fungoid_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+
+############## jorgalleg
+
+country_event = {
+	id = startingfleetsforempires.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = jorgalleg_star_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Jorgalleg fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "molluscoid_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "molluscoid_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "molluscoid_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "molluscoid_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "molluscoid_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}	
+
+############## RAK GOL
+
+country_event = {
+	id = startingfleetsforempires.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = rakgol_star_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "RakGol fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "reptilian_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+##### CALIXIS REBELS
+
+country_event = {
+	id = startingfleetsforempires.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = calixis_human_star_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Rebels fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+############## SLAUGTH
+
+country_event = {
+	id = startingfleetsforempires.11
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = slaugth_star_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Slaugth fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "fungoid_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "fungoid_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+############## Terrelian
+
+country_event = {
+	id = startingfleetsforempires.12
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = terellian_star_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				create_fleet = { name = "Terellian fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "reptilian_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "reptilian_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+		}	
+	}
+}
+
+
+
+
+##################################### Imperium Fleets Many Fleets
+
+country_event = {
+	id = startingfleetsforempires.99
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = mankind_star_empire
+			}
+			capital_scope = {
+				save_event_target_as = flotopojawsietutajprosze
+				owner = {
+					save_event_target_as = caountrytogetships
+				}
+				
+						create_fleet = { 
+							name = "Phalanx" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Phalanx_Ship"
+									graphical_culture = "imperiall_01"
+								}
+								set_location = event_target:flotopojawsietutajprosze
+							}	
+						}
+				
+				create_fleet = { name = "Battlefleet Solar" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "Blade"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "Spearhead"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 4
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_Deaths_Head"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_Bug_Crusher"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = event_target:flotopojawsietutajprosze
+								distance = 0
+								angle = random
+							}
+						}	
+			}
+					random_planet = {
+						limit = {
+							has_planet_flag = Macraggeplanet
+						}
+						save_event_target_as = flotopojawsietutajprosze2
+					}
+					
+						create_fleet = { 
+							name = "Battlefleet Ultima" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze2
+							}	
+						}
+						
+				random_planet = {
+					limit = {
+						has_planet_flag = Scintillaplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze3
+				}
+						create_fleet = { 
+							name = "Calixis Crusade Battlefleet" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 40
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 40
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 12
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 12
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze3
+							}	
+						}
+						
+				random_planet = {
+					limit = {
+						has_planet_flag = Bakkaplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze4
+				}
+						create_fleet = { 
+							name = "Battlefleet Bakka" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze4
+							}	
+						}
+
+				random_planet = {
+					limit = {
+						has_planet_flag = EternalCrusaderplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze5
+				}
+						create_fleet = { 
+							name = "Black Templars Crusade Battlefleet" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 40
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 40
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 15
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 15
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze5
+							}	
+						}
+						
+						create_fleet = { 
+							name = "Eternal Cruseder" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Eternal_Cruseder_Ship"
+									graphical_culture = "imperiall_01"
+								}
+								set_location = event_target:flotopojawsietutajprosze5
+							}	
+						}
+					
+				random_planet = {
+					limit = {
+						has_planet_flag = Hydraphurplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze6
+				}
+						create_fleet = { 
+							name = "Battlefleet Pacificus" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze6
+							}	
+						}
+
+				random_planet = {
+					limit = {
+						has_planet_flag = ShadowHiveplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze7
+				}
+						create_fleet = { 
+							name = "Battlefleet Ultima" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze7
+							}	
+						}
+
+				random_planet = {
+					limit = {
+						has_planet_flag = AmarahPrimeplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze8
+				}
+						create_fleet = { 
+							name = "Battlefleet Orpheus" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze8
+							}	
+						}
+
+				random_planet = {
+					limit = {
+						has_planet_flag = PortMawplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze9
+				}
+						create_fleet = { 
+							name = "Battlefleet Gothic" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze9
+							}	
+						}						
+						
+				random_planet = {
+					limit = {
+						has_planet_flag = Cadiaplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze10
+				}
+						create_fleet = { 
+							name = "Battlefleet Cadia" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze10
+							}	
+						}
+
+				random_planet = {
+					limit = {
+						has_planet_flag = Armageddonplanet
+					}
+					save_event_target_as = flotopojawsietutajprosze11
+				}
+						create_fleet = { 
+							name = "Battlefleet Armageddon" 
+							effect = {
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 1000
+								
+								set_owner = event_target:caountrytogetships
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "imperiall_01"
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 2
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 4
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										design = "NAME_Deaths_Head"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "NAME_Bug_Crusher"
+										graphical_culture = "imperiall_01"
+									}
+								}
+								set_location = event_target:flotopojawsietutajprosze11
+							}	
+						}
+
+						
+		}	
+	}
+}	
+
+
+
+
+
+###### Test... It worked :D
+
+country_event = {
+	id = startingfleetsforempires.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_fleet_from_naval_cap = 0.4
+		last_created_fleet = {
+			set_location = root.capital_scope
+		}	
+	}
+}
+

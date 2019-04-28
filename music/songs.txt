@@ -1,0 +1,44 @@
+song = {
+	name = "deathofhorus"
+}
+
+song = {
+	name = "horus"
+}
+
+song = {
+	name = "bloodofsanguinius"
+}
+
+song = {
+	name = "ecclesiarchy"
+}
+
+song = {
+	name = "allisdust"
+}
+
+song = {
+	name = "tts_that_centurion"
+}
+
+song = {
+	name = "tts_end_theme"
+}
+
+song = {
+	name = "inquisitor_soundtrack"
+}
+
+song = {
+	name = "dow_chant"
+}
+
+song = {
+	name = "marsz_pierwszej_brygady"
+}
+
+song = {
+	name = "szara_piechota_marsz"
+}
+

@@ -1,0 +1,578 @@
+
+namespace = chaoseisenhorn
+
+country_event = {
+	id = chaoseisenhorn.1
+	title = "Scarus Sector"
+	desc = eiss1.1.desc
+	picture = GFX_evt_Young_Eisenhorn
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		
+		years_passed > 14
+		
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "Ignore"
+		country_event = { id = chaoseisenhorn.2 }
+	}
+	
+	option = {
+		name = "Immedietly go to Hubris."
+		country_event = { id = chaoseisenhorn.3 }
+	}
+	
+	option = {
+		name = "Immedietly go to Gudrun."
+		country_event = { id = chaoseisenhorn.2 }
+	}
+	
+	option = {
+		name = "Immedietly go to Thracian."
+		country_event = { id = chaoseisenhorn.2 }
+	}
+	
+	option = {
+		name = "Immedietly go to Vraks."
+		country_event = { id = chaoseisenhorn.2 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.2
+	title = "Hubris found death"
+	desc = eiss1.2.desc
+	picture = GFX_evt_ice_planet
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "Very sad..."
+		country_event = { id = chaoseisenhorn.4 days = 5 }
+	}
+}	
+
+country_event = {
+	id = chaoseisenhorn.3
+	title = "Hubris"
+	desc = eiss1.3.desc
+	picture = GFX_evt_ice_planet
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "Well done!"
+		country_event = { id = chaoseisenhorn.20 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.4
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_planet_flag = Hubrisplanet
+			}
+			planet_event = { id = chaoseisenhorn.5 }
+		}
+		country_event = { id = chaoseisenhorn.6 }
+	}
+}
+	
+planet_event = {
+	id = chaoseisenhorn.5
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		destroy_colony = { keep_buildings = no }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.6
+	title = "CHAOS"
+	desc = eiss1.4.desc
+	picture = GFX_evt_Warp_Storm
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_planet_flag = scarussector
+			}
+			planet_event = { id = chaoseisenhorn.7 }
+		}
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+planet_event = {
+	id = chaoseisenhorn.7
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+				every_country = {
+					limit = {
+						has_country_flag = eyechaos_empire
+					}
+					save_event_target_as = eyechaos_empire
+				}
+				
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Black_Legion"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 5
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 5
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.20
+	title = "Results"
+	desc = eiss1.5.desc
+	picture = GFX_evt_Inquisitor_And_Reutine
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "Ignore"
+		country_event = { id = chaoseisenhorn.21 }
+	}
+	
+	option = {
+		name = "Immedietly investigate Hubris."
+		country_event = { id = chaoseisenhorn.21 }
+	}
+	
+	option = {
+		name = "Immedietly investigate Gudrun."
+		country_event = { id = chaoseisenhorn.30 }
+	}
+	
+	option = {
+		name = "Immedietly investigate Thracian."
+		country_event = { id = chaoseisenhorn.21 }
+	}
+	
+	option = {
+		name = "Immedietly investigate Vraks."
+		country_event = { id = chaoseisenhorn.21 }
+	}
+}	
+
+country_event = {
+	id = chaoseisenhorn.21
+	title = "Results"
+	desc = eiss1.6.desc
+	picture = GFX_evt_Inquisitor_And_Reutine
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "Ok"
+		country_event = { id = chaoseisenhorn.6 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.30
+	title = "Cultist found"
+	desc = eiss1.7.desc
+	picture = GFX_evt_Inquisitor_And_Reutine
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Good News"
+		country_event = { id = chaoseisenhorn.40 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.40
+	title = "Results"
+	desc = eiss1.8.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "Ignore"
+		country_event = { id = chaoseisenhorn.6 days = 10 }
+	}
+	
+	option = {
+		name = "Immedietly investigate Hubris again."
+		country_event = { id = chaoseisenhorn.6 }
+	}
+	
+	option = {
+		name = "Immedietly investigate Gudrun again."
+		country_event = { id = chaoseisenhorn.6 }
+	}
+	
+	option = {
+		name = "Immedietly investigate world near saruthi space."
+		country_event = { id = chaoseisenhorn.6 }
+	}
+	
+	option = {
+		name = "Immedietly investigate planets with Glaw influence."
+		country_event = { id = chaoseisenhorn.41 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.41
+	title = "Results"
+	desc = eiss1.9.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Stop Them"
+		country_event = { id = chaoseisenhorn.42 days = 5 }
+	}
+	option = {
+		name = "Check closely what they are doing"
+		country_event = { id = chaoseisenhorn.43 days = 5 }
+	}
+	option = {
+		name = "Follow them"
+		country_event = { id = chaoseisenhorn.50 days = 5 }
+	}
+	option = {
+		name = "Escape"
+		country_event = { id = chaoseisenhorn.50 days = 15}
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.42
+	title = "Results"
+	desc = eiss1.10.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "NOOOO!"
+		country_event = { id = chaoseisenhorn.6 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.43
+	title = "Results"
+	desc = eiss1.11.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "NOOOO!"
+		country_event = { id = chaoseisenhorn.6 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.50
+	title = "Results"
+	desc = eiss1.12.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Immedietly follow them"
+		country_event = { id = chaoseisenhorn.52 days = 5 }
+	}
+	option = {
+		name = "Return"
+		country_event = { id = chaoseisenhorn.6 days = 5 }
+	}
+	option = {
+		name = "Wait for help"
+		country_event = { id = chaoseisenhorn.51 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.51
+	title = "Results"
+	desc = eiss1.13.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Sad"
+		country_event = { id = chaoseisenhorn.6 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.52
+	title = "Results"
+	desc = eiss1.14.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Reorganize and attack"
+		country_event = { id = chaoseisenhorn.53 days = 5 }
+	}
+	option = {
+		name = "Escape"
+		country_event = { id = chaoseisenhorn.6 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.53
+	title = "Results"
+	desc = eiss1.15.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Good news"
+		country_event = { id = chaoseisenhorn.60 days = 5 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.60
+	title = "Results"
+	desc = eiss1.16.desc
+	picture = GFX_evt_Young_Eisenhorn
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Attack immedietly"
+		country_event = { id = chaoseisenhorn.61 days = 5 }
+		trigger = {
+			energy > 999
+			has_country_resource = {
+				type = minerals
+				amount > 999
+			}
+		}
+		add_minerals = -1000
+		add_energy = -1000
+	}
+	option = {
+		name = "Stop operation due to lack of resources"
+		country_event = { id = chaoseisenhorn.6 days = 1 }
+	}
+}
+
+country_event = {
+	id = chaoseisenhorn.61
+	title = "Results"
+	desc = eiss1.17.desc
+	picture = GFX_evt_Inquisitor_And_Reutine
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "Good news"
+	}
+}

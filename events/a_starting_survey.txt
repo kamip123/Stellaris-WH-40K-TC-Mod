@@ -1,0 +1,89 @@
+namespace = startingsurveyforempires
+
+################# NEVER USE THIS AGAIN !!!!!!!!!!!!!!!!!!
+
+country_event = {
+	id = startingsurveyforempires.90
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+
+	}
+	
+	immediate = {
+		#country_event = { id = startingsurveyforempires.1 }
+		#country_event = { id = startingsurveyforempires.2 }
+		#country_event = { id = startingsurveyforempires.3 }
+		#country_event = { id = startingsurveyforempires.4 }
+		#country_event = { id = startingsurveyforempires.5 }
+		#country_event = { id = startingsurveyforempires.6 }
+		#country_event = { id = startingsurveyforempires.7 }
+		#country_event = { id = startingsurveyforempires.8 }
+		#country_event = { id = startingsurveyforempires.9 }
+		#country_event = { id = startingsurveyforempires.10 }
+		#country_event = { id = startingsurveyforempires.11 }
+		#country_event = { id = startingsurveyforempires.12 }
+		#country_event = { id = startingsurveyforempires.99 }
+	}
+}	
+
+####### Imperium
+country_event = {
+	id = startingsurveyforempires.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = mankind_star_empire
+			}
+			save_event_target_as = tobesurveyedtarget
+			every_planet = {
+				surveyed = {
+					set_surveyed = yes
+					surveyor = event_target:tobesurveyedtarget
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = startingsurveyforempires.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_country = {
+			save_event_target_as = tobesurveyedtarget
+			every_planet = {
+				surveyed = {
+					set_surveyed = yes
+					surveyor = event_target:tobesurveyedtarget
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = startingsurveyforempires.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = mankind_star_empire
+			}
+			every_planet = {
+				surveyed = {
+					set_surveyed = yes
+					surveyor = from
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,217 @@
+
+namespace = darkeldarraids1
+
+country_event = {
+	id = darkeldarraids1.1234
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		years_passed > 1
+	}
+	
+	immediate = {
+		set_global_flag = darkeldarraids1start1
+	}
+}
+
+country_event = {
+	id = darkeldarraids1.2
+	hide_window = yes
+	
+	trigger = {
+		is_ai = no
+		NOT = {
+			has_global_flag = darkeldarraid1
+		}
+		has_global_flag = darkeldarraids1start1
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				NOT = { has_planet_flag = darkeldardontattack }
+			}
+			planet_event = { id = darkeldarraids1.3 }
+			set_planet_flag = darkeldardontattack
+		}	
+		set_global_flag = darkeldarraid1
+	}
+}
+
+planet_event = {
+	id = darkeldarraids1.3
+	title = "Dark Eldars"
+	desc = deraid1.1.desc
+	picture = GFX_evt_Dark_Eldar_Raid
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		remove_planet_flag = darkeldardontattack
+		every_country = {
+			limit = {
+				has_country_flag = eldar_dark_com_empire
+			}
+			save_event_target_as = eldar_dark_com_empire
+		}
+		while = {
+			count = 2									#was 4
+			create_army = {
+				name = "Dark Eldars"
+				owner = event_target:eldar_dark_com_empire
+				species = owner_main_species
+				type = "Wyches"
+			}					
+		}
+		while = {
+			count = 2									#was 5
+			create_army = {
+				name = "Dark Eldars"
+				owner = event_target:eldar_dark_com_empire
+				species = owner_main_species
+				type = "Kabalite_Warriors"
+			}					
+		}
+		while = {
+			count = 2									#was 5
+			create_army = {
+				name = "Dark Eldars"
+				owner = event_target:eldar_dark_com_empire
+				species = owner_main_species
+				type = "Raider"
+			}					
+		}
+		while = {
+			count = 2									#was 5
+			create_army = {
+				name = "Dark Eldars"
+				owner = event_target:eldar_dark_com_empire
+				species = owner_main_species
+				type = "Venom"
+			}					
+		}
+		while = {
+			count = 2									#was 5
+			create_army = {
+				name = "Dark Eldars"
+				owner = event_target:eldar_dark_com_empire
+				species = owner_main_species
+				type = "Scourges"
+			}					
+		}
+		while = {
+			count = 2									#was 5
+			create_army = {
+				name = "Dark Eldars"
+				owner = event_target:eldar_dark_com_empire
+				species = owner_main_species
+				type = "Harlequins"
+			}					
+		}
+		while = {
+			count = 2									#was 5
+			create_army = {
+				name = "Dark Eldars"
+				owner = event_target:eldar_dark_com_empire
+				species = owner_main_species
+				type = "Incubi"
+			}					
+		}
+
+				create_fleet = { name = "Dark Eldar fleet" }	
+				last_created_fleet = {
+					set_owner = event_target:eldar_dark_com_empire
+							create_ship = {
+								name = random
+								design = "NAME_ECCABC"
+								graphical_culture = "darkeldar_01"
+							}
+							create_ship = {
+								name = random
+								design = "NAME_ECCABC"
+								graphical_culture = "darkeldar_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_ECCABC"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_EBABC"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_ECABC"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_EDABC"
+									graphical_culture = "darkeldar_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagh.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+				}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = darkeldarraids1.5
+	hide_window = yes
+	
+	
+	trigger = {
+		is_ai = no
+		has_global_flag = darkeldarraid1
+	}
+		
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	immediate = {
+		remove_global_flag = darkeldarraid1
+	}
+}

@@ -1,0 +1,181 @@
+namespace = startrelationss
+#######################################
+############# trigger #################
+#######################################
+country_event = {
+	id = startrelationss.90
+	hide_window = yes
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		country_event = { id = startrelationss.1 }
+		country_event = { id = startrelationss.2 }
+		country_event = { id = startrelationss.3 }
+		country_event = { id = startrelationss.4 }
+		country_event = { id = startrelationss.5 }
+		country_event = { id = startrelationss.6 }
+		#country_event = { id = startrelationss.7 }
+	}
+}
+
+############ chaos ####################
+country_event = {
+	id = startrelationss.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = chaos_empire
+			}
+			save_event_target_as = relationtoaddqwerty
+			every_country = {
+				limit = {
+					has_country_flag = chaos_empire
+				}
+				add_opinion_modifier = {
+					who = event_target:relationtoaddqwerty
+					modifier = opinion_both_chaos
+				}
+			}
+		}	
+	}
+}
+############ eldar ####################
+country_event = {
+	id = startrelationss.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eldar_empire
+			}
+			save_event_target_as = relationtoaddqwerty
+			every_country = {
+				limit = {
+					has_country_flag = eldar_empire
+				}
+				add_opinion_modifier = {
+					who = event_target:relationtoaddqwerty
+					modifier = opinion_both_eldar
+				}
+			}
+		}	
+	}
+}
+############ ork ####################
+country_event = {
+	id = startrelationss.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ork_empire
+			}
+			save_event_target_as = relationtoaddqwerty
+			every_country = {
+				limit = {
+					has_country_flag = ork_empire
+				}
+				add_opinion_modifier = {
+					who = event_target:relationtoaddqwerty
+					modifier = opinion_both_ork
+				}
+			}
+		}	
+	}
+}
+############ necron ####################
+country_event = {
+	id = startrelationss.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necron_empire
+			}
+			save_event_target_as = relationtoaddqwerty
+			every_country = {
+				limit = {
+					has_country_flag = necron_empire
+				}
+				add_opinion_modifier = {
+					who = event_target:relationtoaddqwerty
+					modifier = opinion_both_necron
+				}
+			}
+		}	
+	}
+}
+############ xenos ####################
+country_event = {
+	id = startrelationss.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				Or = {
+					has_country_flag = hellgrammite_empire
+					has_country_flag = jorgalleg_empire
+					has_country_flag = rakgol_empire
+					has_country_flag = terellian_empire
+					has_country_flag = slaugth_empire
+					has_country_flag = calixis_human_star_empire
+					has_country_flag = tau_empire
+				}
+			}
+			save_event_target_as = relationtoaddqwerty
+			every_country = {
+				limit = {
+					Or = {
+						has_country_flag = hellgrammite_empire
+						has_country_flag = jorgalleg_empire
+						has_country_flag = rakgol_empire
+						has_country_flag = terellian_empire
+						has_country_flag = slaugth_empire
+						has_country_flag = calixis_human_star_empire
+						has_country_flag = tau_empire
+					}
+				}
+				add_opinion_modifier = {
+					who = event_target:relationtoaddqwerty
+					modifier = opinion_both_xenos
+				}
+			}
+		}	
+	}
+}

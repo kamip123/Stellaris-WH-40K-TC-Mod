@@ -1,0 +1,794 @@
+namespace = orpheussectorevents
+
+country_event = {
+	id = orpheussectorevents.1
+	title = "Necron Forces!"
+	desc = neco1.1.desc
+	picture = GFX_evt_Necrons_Attack_Jeden
+	fire_only_once = yes
+
+	trigger = {
+		years_passed > 14
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = firstnecronattack
+			}
+			planet_event = { id = orpheussectorevents.2 }
+		}
+		country_event = { id = orpheussectorevents.10 days = 100 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = orpheussectorevents.2
+	title = "Necrons"
+	desc = neco1.2.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+		has_planet_flag = firstnecronattack
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronmaynarkh_empire
+			}
+			save_event_target_as = necronmaynarkh_empire
+		}
+		while = {
+			count = 1											#was 3
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Monolith"
+			}
+		}
+		while = {
+			count = 1											#was 3
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Canoptek_Wraith"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Immortal"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Destroyer"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Lychguard"
+			}
+		}
+		
+		create_fleet = { name = "Necron fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_NCCABC"
+								graphical_culture = "necron_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_NCCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_NDABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+
+#######################
+
+
+
+country_event = {
+	id = orpheussectorevents.10
+	title = "Necron Forces!"
+	desc = neco1.3.desc
+	picture = GFX_evt_Necrons_Attack_Dwa
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = secondnecronattack
+			}
+			planet_event = { id = orpheussectorevents.11 }
+		}
+		country_event = { id = orpheussectorevents.20 days = 100 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = orpheussectorevents.11
+	title = "Necrons"
+	desc = neco1.2.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+		has_planet_flag = secondnecronattack
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronmaynarkh_empire
+			}
+			save_event_target_as = necronmaynarkh_empire
+		}
+		while = {
+			count = 1											#was 3
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Monolith"
+			}
+		}
+		while = {
+			count = 1											#was 3
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Canoptek_Wraith"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Immortal"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Destroyer"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Lychguard"
+			}
+		}
+		
+		create_fleet = { name = "Necron fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_NCCABC"
+								graphical_culture = "necron_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_NCCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_NDABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+
+#######################
+
+
+
+country_event = {
+	id = orpheussectorevents.20
+	title = "Necron Forces!"
+	desc = neco1.4.desc
+	picture = GFX_evt_Necrons_Attack_Trzy
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thirdnecronattack
+			}
+			planet_event = { id = orpheussectorevents.21 }
+		}
+		country_event = { id = orpheussectorevents.30 days = 100 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = orpheussectorevents.21
+	title = "Necrons"
+	desc = neco1.2.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+		has_planet_flag = thirdnecronattack
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronmaynarkh_empire
+			}
+			save_event_target_as = necronmaynarkh_empire
+		}
+		while = {
+			count = 1											#was 3
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Monolith"
+			}
+		}
+		while = {
+			count = 1											#was 3
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Canoptek_Wraith"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Immortal"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Destroyer"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Lychguard"
+			}
+		}
+		
+		create_fleet = { name = "Necron fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_NCCABC"
+								graphical_culture = "necron_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_NCCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_NDABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+
+#######################
+
+
+
+country_event = {
+	id = orpheussectorevents.30
+	title = "Necron Forces!"
+	desc = neco1.5.desc
+	picture = GFX_evt_Necrons_Attack_Cztery
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = fournecronattack
+			}
+			planet_event = { id = orpheussectorevents.31 }
+		}
+		#country_event = { id = orpheussectorevents.40 days = 100 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = orpheussectorevents.31
+	title = "Necrons"
+	desc = neco1.2.desc
+	is_triggered_only = yes
+	location = ROOT
+	trigger = {
+		has_planet_flag = fournecronattack
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronmaynarkh_empire
+			}
+			save_event_target_as = necronmaynarkh_empire
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Monolith"
+			}
+		}
+		while = {
+			count = 2											#was 5
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Canoptek_Wraith"
+			}
+		}
+		while = {
+			count = 3											#was 7
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Immortal"
+			}
+		}
+		while = {
+			count = 3											#was 7
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Destroyer"
+			}
+		}
+		while = {
+			count = 3											#was 7
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+		}
+		while = {
+			count = 3											#was 7
+			create_army = {
+				name = "Necron army"
+				owner = event_target:necronmaynarkh_empire
+				species = owner_main_species
+				type = "Lychguard"
+			}
+		}
+		
+		create_fleet = { name = "Necron fleet" }
+				
+						last_created_fleet = {
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 1000
+							
+							set_owner = event_target:caountrytogetships
+							create_ship = {
+								name = random
+								design = "NAME_NCCABC"
+								graphical_culture = "necron_01"
+							}
+							while = {
+								count = 19
+								create_ship = {
+									name = random
+									design = "NAME_NCCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_NBABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_NCABCD"
+									graphical_culture = "necron_01"
+								}
+							}
+							while = {
+								count = 8
+								create_ship = {
+									name = random
+									design = "NAME_NDABC"
+									graphical_culture = "necron_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+
+
+
+
+#######################
+
+
+

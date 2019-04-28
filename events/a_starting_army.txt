@@ -1,0 +1,2233 @@
+namespace = startingarmyssforempires
+#######################################
+############# trigger #################
+#######################################
+country_event = {
+	id = startingarmyssforempires.90
+	hide_window = yes
+	#is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = { has_country_flag = human_empire }
+			country_event = { id = startingarmyssforempires.1 }
+		}	
+		country_event = { id = startingarmyssforempires.6 }
+		country_event = { id = startingarmyssforempires.7 }
+		country_event = { id = startingarmyssforempires.8 }
+		country_event = { id = startingarmyssforempires.9 }
+		country_event = { id = startingarmyssforempires.10 }
+		every_country = {
+			limit = { has_country_flag = ork_empire }
+			country_event = { id = startingarmyssforempires.11 }
+		}
+		every_country = {
+			limit = {
+				Or = {
+					has_country_flag = hellgrammite_empire
+					has_country_flag = jorgalleg_empire
+					has_country_flag = rakgol_empire
+					has_country_flag = terellian_empire
+					has_country_flag = slaugth_empire
+					has_country_flag = calixis_human_star_empire
+				} 
+			}
+			country_event = { id = startingarmyssforempires.12 }
+		}
+		every_country = {
+			limit = { has_country_flag = tau_empire }
+			country_event = { id = startingarmyssforempires.13 }
+		}
+		every_country = {
+			limit = { has_country_flag = chaos_empire }
+			country_event = { id = startingarmyssforempires.14 }
+		}
+		every_country = {
+			limit = { has_country_flag = necron_empire }
+			country_event = { id = startingarmyssforempires.15 }
+		}
+	}
+}
+####### crusade fleets ####
+country_event = {
+	id = startingarmyssforempires.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			owner = { save_event_target_as = armyowner }	
+			
+			# forge
+			if = {
+				limit = {
+					Or = {
+						#is_planet_class = pc_forge
+						#is_planet_class = pc_forgee
+						#is_planet_class = pc_forgeee
+						is_planet_class = pc_forge_ring
+						is_planet_class = pc_forge_ring2
+						is_planet_class = pc_forge_ring3
+					}
+				}
+				owner = { save_event_target_as = armyowner }
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "warhound_titan"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "reaver_titan"
+				}
+			}		
+			
+			# important planets
+			if = {
+				limit = {
+					Or = {
+						#is_planet_class = pc_industrial
+						#is_planet_class = pc_armoury
+						#is_planet_class = pc_shrine
+						#is_planet_class = pc_hive_medium
+						#is_planet_class = pc_hive_arid
+						#is_planet_class = pc_hive_continental_01
+						#is_planet_class = pc_hive_continental_02
+						#is_planet_class = pc_hive_ocean
+						#is_planet_class = pc_hive_tundra
+						#is_planet_class = pc_super_hive
+						#is_planet_class = pc_mega_hive
+						#is_planet_class = pc_hive_industrial
+						has_planet_flag = BelisCoronaplanet
+						has_planet_flag = Vraksplanet
+						has_planet_flag = Badabplanet
+						has_planet_flag = Uinphidiaplanet
+						has_planet_flag = ShadowHiveplanet
+						has_planet_flag = Birminghamplanet
+						has_planet_flag = Naiatocplanet
+						has_planet_flag = MuGulathBayplanet
+						has_planet_flag = Alphosplanet
+						
+					}
+				}
+				owner = { save_event_target_as = armyowner }
+				
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+			}
+			
+			# cadia
+			if = {
+				limit = {
+					Or = {
+						has_planet_flag = Cadiaplanet
+					}
+				}
+				owner = { save_event_target_as = armyowner }
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Cadian_Defense_Troops_One_Time"
+				}
+			}	
+			
+			# important planets
+			if = {
+				limit = {
+					Or = {
+						has_planet_flag = Cadiaplanet
+						has_planet_flag = PortMawplanet
+						has_planet_flag = Armageddonplanet
+						has_planet_flag = Terraplanet
+						has_planet_flag = Macraggeplanet
+						has_planet_flag = Bakkaplanet
+						has_planet_flag = OphelliaVIIplanet
+						has_planet_flag = AmarahPrimeplanet
+					}
+					
+					
+				}
+				owner = { save_event_target_as = armyowner }
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "warhound_titan"
+				}
+				create_army = {
+					name = "Skittari army"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "reaver_titan"
+				}
+			}
+			
+			#Eternal Crusader 
+			if = {
+				limit = {
+					has_planet_flag = EternalCrusaderplanet
+				}
+				owner = { save_event_target_as = armyowner }
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Dark_Angels"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "White_Scars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Space_Wolves"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Imperial_Fists"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Blood_Angels"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Iron_Hands"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "ultramarines"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Salamanders"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Raven_Guard"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Grey_Knights"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Black_Templars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Black_Templars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Black_Templars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Blood_Ravens"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Deathwatch"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Winged_Hussars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Sisters_of_Battle"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "conscripts"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "conscripts"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "conscripts"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_small"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_medium"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "death_planet_imperial_guard"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "death_korps"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "warlord_titan"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "reaver_titan"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_knight"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "warhound_titan"
+				}
+			}
+			
+			# Scintilla planet
+			if = {
+				limit = {
+					has_planet_flag = Scintillaplanet
+				}
+				owner = { save_event_target_as = armyowner }
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Dark_Angels"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "White_Scars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Space_Wolves"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big_defense"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Imperial_Fists"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Blood_Angels"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Iron_Hands"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "ultramarines"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Salamanders"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Raven_Guard"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Grey_Knights"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Black_Templars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_medium"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_medium"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Blood_Ravens"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Deathwatch"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Winged_Hussars"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Sisters_of_Battle"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "penal_legion"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "penal_legion"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Multi_Regiment_Battlegroup"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "Armoured_Regiment"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "conscripts"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "conscripts"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "conscripts"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_small"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_medium"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_guard_big"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "death_planet_imperial_guard"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "death_korps"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "skittari"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "warlord_titan"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "reaver_titan"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "imperial_knight"
+				}
+				create_army = {
+					name = "Imperial Guard"
+					owner = event_target:armyowner
+					species = owner_main_species
+					type = "warhound_titan"
+				}
+			}			
+		
+		}		
+	}
+}
+
+#######################################
+######## tomb #########################
+#######################################
+country_event = {
+	id = startingarmyssforempires.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				is_planet_class = pc_tomb
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Lychguard_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Lychguard_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Lychguard_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Lychguard_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Lychguard_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+		}	
+	}
+}
+######### deamon ######################
+country_event = {
+	id = startingarmyssforempires.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				Or = {
+					is_planet_class = pc_daemon
+					is_planet_class = pc_daemonn
+					is_planet_class = pc_daemont
+					is_planet_class = pc_daemons
+				}
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Chaos_Spawn"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Greater_Daemons_defense"
+			}
+		}	
+	}
+}
+######### Craftworld ##################
+country_event = {
+	id = startingarmyssforempires.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				is_planet_class = pc_craftworld
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Phantom_Titan"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Phantom_Titan"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Phantom_Titan"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Phantom_Titan"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Guardian_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Guardian_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Guardian_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Guardian_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+			create_army = {
+				name = "Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ranger_Squad_defense"
+			}
+		}	
+	}
+}
+##### Tau sept ########################
+country_event = {
+	id = startingarmyssforempires.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				is_planet_class = pc_advancecity
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "sept_fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "sept_fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "sept_fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "sept_fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "sept_fire_warrior_defense"
+			}
+		}	
+	}
+}
+###### Webway dark eldar ##############
+country_event = {
+	id = startingarmyssforempires.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				is_planet_class = pc_webway
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Wyches"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Wyches"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Wyches"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Wyches"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Wyches"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Wyches"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Wyches"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Kabalite_Warriors_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+			create_army = {
+				name = "Dark Eldar Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Venom_defense"
+			}
+		}	
+	}
+}
+########## Ork worlds #################
+country_event = {
+	id = startingarmyssforempires.11
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Ork_Nobz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Stormboyz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Stormboyz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Stormboyz_defense"
+			}
+			create_army = {
+				name = "Ork Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Stormboyz_defense"
+			}
+		}	
+	}
+}
+############ Generic Xenos ############
+country_event = {
+	id = startingarmyssforempires.12
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				owner = {
+					Or = {
+						has_country_flag = hellgrammite_empire
+						has_country_flag = jorgalleg_empire
+						has_country_flag = rakgol_empire
+						has_country_flag = terellian_empire
+						has_country_flag = slaugth_empire
+						has_country_flag = calixis_human_star_empire
+					}
+					
+				}
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Titan"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Titan"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Titan"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Squad"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Squad"
+			}
+
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Squad"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Planetary_defense"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Planetary_defense"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Planetary_defense"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Planetary_defense"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Planetary_defense"
+			}
+			create_army = {
+				name = "Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Xenos_Planetary_defense"
+			}
+		}	
+	}
+}
+################### tau worlds ########
+country_event = {
+	id = startingarmyssforempires.13
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				Not = {
+					is_planet_class = pc_advancecity
+				}
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+			create_army = {
+				name = "Tau Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "fire_warrior_defense"
+			}
+		}	
+	}
+}
+########## chaos worlds ###############
+country_event = {
+	id = startingarmyssforempires.14
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				Not = {
+					is_planet_class = pc_daemon
+				}
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+			create_army = {
+				name = "Chaos Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Cultists_defense"
+			}
+		}	
+	}
+}
+########## necron worlds ##############
+country_event = {
+	id = startingarmyssforempires.15
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				Not = {
+					is_planet_class = pc_tomb
+				}
+			}
+			owner = { save_event_target_as = armyowner }
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+			create_army = {
+				name = "Necron Army"
+				owner = event_target:armyowner
+				species = owner_main_species
+				type = "Necron_Warriors_defense"
+			}
+		}	
+	}
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+namespace = redemptioncrusadesevents
+
+
+
+
+
+country_event = {
+	id = redemptioncrusadesevents.1
+	title = "Great heroes!"
+	desc = recruher.1.desc
+	picture = GFX_evt_Aints_Appear
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		years_passed > 12
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = random
+			skill = 3000
+			event_leader = yes
+			effect = {
+				set_leader_flag = gratheroforfiftyyears
+			}
+		}
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = random
+			skill = 3000
+			event_leader = yes
+			effect = {
+				set_leader_flag = gratheroforfiftyyears
+			}
+		}
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = random
+			skill = 3000
+			event_leader = yes
+			effect = {
+				set_leader_flag = gratheroforfiftyyears
+			}
+		}
+		create_leader = {
+			type = general
+			species = owner_main_species
+			name = random
+			skill = 3000
+			event_leader = yes
+			effect = {
+				set_leader_flag = gratheroforfiftyyears
+			}
+		}
+		create_leader = {
+			type = general
+			species = owner_main_species
+			name = random
+			skill = 3000
+			event_leader = yes
+			effect = {
+				set_leader_flag = gratheroforfiftyyears
+			}
+		}
+		country_event = { id = redemptioncrusadesevents.2 days = 3000 }
+	}
+
+	option = {
+		name = "Amazing!"
+	}
+}
+
+country_event = {
+	id = redemptioncrusadesevents.2
+	title = "Great heroes!"
+	desc = recruher.2.desc
+	picture = GFX_evt_Saints_Dissapear
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_leader = {
+			limit = { 
+				has_leader_flag = gratheroforfiftyyears
+			}
+			kill_leader = {
+				show_notification = no
+			}
+		}
+	}
+
+	option = {
+		name = "Let them be by Emperor side!"
+	}
+}
+

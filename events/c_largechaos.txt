@@ -1,0 +1,728 @@
+
+namespace = chaos4
+
+country_event = {
+	id = chaos4.1234
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = mankind_star_empire
+		years_passed > 3
+	}
+	
+	immediate = {
+		set_global_flag = chaosrisingstart4
+	}
+}
+
+country_event = {
+	id = chaos4.10
+	hide_window = yes
+	
+	trigger = {
+		is_ai = no
+		has_country_flag = mankind_star_empire
+		NOT = {
+			has_global_flag = chaosrising4 
+		}
+		has_global_flag = chaosrisingstart4
+	}
+	
+	immediate = {
+		set_global_flag = chaosrising4
+		random_owned_planet = {
+			limit = {
+					Or = {
+						is_planet_class = pc_industrial
+						#is_planet_class = pc_shrine
+						is_planet_class = pc_hive_arid
+						is_planet_class = pc_hive_continental_01
+						is_planet_class = pc_hive_continental_02
+						is_planet_class = pc_hive_ocean
+						is_planet_class = pc_hive_tundra
+						is_planet_class = pc_advancecity
+						is_planet_class = pc_advancexenocity
+						is_planet_class = pc_advancexenocityy
+						is_planet_class = pc_advancexenocityyy
+						is_planet_class = pc_forge
+						is_planet_class = pc_forgee
+						is_planet_class = pc_forgeee
+						is_planet_class = pc_forge_ring
+						is_planet_class = pc_forge_ring2
+						is_planet_class = pc_forge_ring3
+						is_planet_class = pc_hive_medium
+						is_planet_class = pc_super_hive
+						is_planet_class = pc_mega_hive
+						is_planet_class = pc_hive_industrial
+						is_planet_class = pc_fortress
+					}
+				has_ground_combat = no
+				NOT = { has_planet_flag = chaosdontattackxd }				
+			}
+			planet_event = { id = chaos4.2 }	
+			set_planet_flag = chaosdontattackxd
+		}
+    }
+}
+
+planet_event = {
+	id = chaos4.2
+	title = "Chaos Suspected"
+	desc = che1.1.desc
+	picture = GFX_evt_Chaos_Suspected
+	is_triggered_only = yes
+	location = ROOT
+	
+	option = {
+		name = "Send Inquisition!"
+		planet_event = { id = chaos4.3 }
+	}
+	
+	option = {
+		name = "Ignore"
+		planet_event = { id = chaos4.5 }
+	}
+}	
+
+planet_event = {
+	id = chaos4.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			20 = { planet_event = { id = chaos4.655 } }
+			20 = { planet_event = { id = chaos4.656 } }
+			50 = { planet_event = { id = chaos4.657 } }
+			20 = { planet_event = { id = chaos4.658 } }
+			20 = { planet_event = { id = chaos4.659 } }
+			20 = { planet_event = { id = chaos4.5 } }
+		}
+	}
+}
+
+planet_event = {
+	id = chaos4.655
+	title = "Nothing"
+	desc = che1.2.desc
+	picture = GFX_evt_Chaos_Suspected
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		random_pop = { kill_pop = yes }
+		planet_event = { id = chaos4.5 days = 60 }
+		remove_planet_flag = orksdontattackxd
+	}
+	option = {
+		name = "Ok"
+	}
+}
+	
+planet_event = {
+	id = chaos4.656
+	title = "Inquisitor died"
+	desc = che1.3.desc
+	picture = GFX_evt_Inquisitor_And_Reutine
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		random_pop = { kill_pop = yes }
+		planet_event = { id = chaos4.5 days = 1 }
+		remove_planet_flag = orksdontattackxd
+	}
+	option = {
+		name = "No!"
+	}
+}
+
+planet_event = {
+	id = chaos4.657
+	title = "Cultist found"
+	desc = che1.4.desc
+	picture = GFX_evt_Ig_Rebellion
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		random_pop = { kill_pop = yes }
+		remove_planet_flag = orksdontattackxd
+	}
+	option = {
+		name = "Good"
+	}
+}	
+
+planet_event = {
+	id = chaos4.658
+	title = "Exterminatus!"
+	desc = che1.5.desc
+	picture = GFX_evt_Exterminatus_Dwa
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		remove_planet_flag = orksdontattackxd
+	}
+	
+	option = {
+		name = "We can't do this!"
+		planet_event = { id = chaos4.660 days = 1 }
+	}
+	option = {
+		name = "Only solution"
+		planet_event = { id = chaos4.13 }
+	}
+	
+}
+
+planet_event = {
+	id = chaos4.659
+	title = "Cultist found"
+	desc = che1.4.desc
+	picture = GFX_evt_Ig_Rebellion
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		
+		remove_planet_flag = orksdontattackxd
+	}
+	
+	option = {
+		name = "Good"
+		planet_event = { id = chaos4.661 days = 200 }
+	}
+}
+
+planet_event = {
+	id = chaos4.660
+	title = "Chaos Raising"
+	desc = che1.6.desc
+	picture = GFX_evt_Chaos_Rising
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		remove_planet_flag = orksdontattackxd
+		every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				every_country = {
+					limit = {
+						has_country_flag = eyechaos_empire
+					}
+					save_event_target_as = eyechaos_empire
+				}
+				
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Black_Legion"
+					}					
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "World_Eaters"
+					}					
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Word_Bearers"
+					}					
+				}
+				while = {
+					count = 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 10
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 15
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	
+	option = {
+		name = "To Arms!"
+	}
+}
+
+planet_event = {
+	id = chaos4.661
+	title = "Chaos Raising"
+	desc = che1.7.desc
+	picture = GFX_evt_Chaos_Rising
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		remove_planet_flag = orksdontattackxd
+		every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Black_Legion"
+					}					
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "World_Eaters"
+					}					
+				}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Word_Bearers"
+					}					
+				}
+				while = {
+					count = 8
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 9
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 8
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	
+	option = {
+		name = "To Arms!"
+	}
+}
+
+planet_event = {
+	id = chaos4.5
+	title = "Chaos Raising"
+	desc = che1.8.desc 
+	picture = GFX_evt_Chaos_Rising
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_planet_flag = orksdontattackxd
+		every_country = {
+				limit = {
+					has_country_flag = eyechaos_empire
+				}
+				save_event_target_as = eyechaos_empire
+			}
+				every_country = {
+					limit = {
+						has_country_flag = eyechaos_empire
+					}
+					save_event_target_as = eyechaos_empire
+				}
+				
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Black_Legion"
+					}					
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "World_Eaters"
+					}					
+				}
+				while = {
+					count = 1
+					create_army = {
+						name = "Chaos Space Marine"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Word_Bearers"
+					}					
+				}
+				while = {
+					count = 9
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Traitor_Guardsmen"
+					}					
+				}
+				while = {
+					count = 9
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				while = {
+					count = 9
+					create_army = {
+						name = "Chaos army"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Predators"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CBABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CCABCD"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 6
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	
+	option = {
+		name = "Don't loose hope yet!"
+	}
+}
+
+country_event = {
+	id = chaos4.12
+	hide_window = yes
+	
+	trigger = {
+		is_ai = no
+		has_global_flag = chaosrising4
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	immediate = {
+		remove_global_flag = chaosrising4
+	}
+}
+
+planet_event = {
+	id = chaos4.13
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		destroy_colony = { keep_buildings = no }
+		change_pc = pc_nuked
+		#remove_modifiers todo
+	}
+}

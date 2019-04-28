@@ -1,0 +1,259 @@
+
+namespace = chaplagzombie
+
+country_event = {
+	id = chaplagzombie.1234
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		years_passed > 6
+	}
+	
+	immediate = {
+		set_global_flag = chaplagzombie3
+	}
+}
+
+country_event = {
+	id = chaplagzombie.2
+	hide_window = yes
+	
+	trigger = {
+		is_ai = no
+		NOT = {
+			has_global_flag = chaplagzombieattack3 
+		}
+		has_global_flag = chaplagzombie3
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				NOT = { has_planet_flag = chaplagzombie3dontattack }
+				NOT = { has_planet_flag = TerraPlanet }
+				Or = {		
+					is_planet_class = pc_hive_arid
+					is_planet_class = pc_hive_continental_01
+					is_planet_class = pc_hive_continental_02
+					is_planet_class = pc_hive_ocean
+					is_planet_class = pc_hive_tundra
+					is_planet_class = pc_advancecity
+					is_planet_class = pc_advancexenocity
+					is_planet_class = pc_advancexenocityy
+					is_planet_class = pc_advancexenocityyy
+					is_planet_class = pc_hive_medium
+					is_planet_class = pc_super_hive
+					is_planet_class = pc_mega_hive
+					is_planet_class = pc_hive_industrial
+				}
+			}
+			planet_event = { id = chaplagzombie.3 }
+			set_planet_flag = chaplagzombie3dontattack
+		}	
+		set_global_flag = chaplagzombieattack3
+	}
+}
+
+planet_event = {
+	id = chaplagzombie.3
+	title = "Zombies"
+	desc = plazom.1.desc
+	picture = GFX_evt_Plague_Zombie_Poster
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		planet_event = { id = chaplagzombie.4 days = 100 }
+	}
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = chaplagzombie.4
+	title = "Zombie"
+	desc = plazom.2.desc
+	picture = GFX_evt_Zombie_Last_Stand
+	is_triggered_only = yes
+	location = ROOT
+	
+	trigger = {
+		has_ground_combat = no 
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		remove_planet_flag = chaplagzombie3dontattack
+			if = {
+				limit = {
+					num_pops > 1
+				}
+				random_pop = { kill_pop = yes }
+			}
+			
+			if = {
+				limit = {
+					has_ground_combat = no 
+				}
+				planet_event = { id = chaplagzombie.5 days = 100 }
+			}
+				every_country = {
+					limit = {
+						has_country_flag = eyechaos_empire
+					}
+					save_event_target_as = eyechaos_empire
+				}
+				while = {
+					count = 10
+					create_army = {
+						name = "Zombie"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = chaplagzombie.5
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	trigger = {
+		has_ground_combat = yes 
+		#has_country_flag = mankind_star_empire
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		remove_planet_flag = chaplagzombie3dontattack
+			if = {
+				limit = {
+					num_pops > 1
+				}
+				random_pop = { kill_pop = yes }
+			}
+			
+			if = {
+				limit = {
+					has_ground_combat = yes 
+				}
+				planet_event = { id = chaplagzombie.5 days = 150 }
+			}
+				every_country = {
+					limit = {
+						has_country_flag = eyechaos_empire
+					}
+					save_event_target_as = eyechaos_empire
+				}
+				while = {
+					count = 2
+					create_army = {
+						name = "Zombie"
+						owner = event_target:eyechaos_empire
+						species = owner_main_species
+						type = "Chaos_Spawn"
+					}					
+				}
+				
+				create_fleet = { name = "Warp Chaos fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:eyechaos_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_CCCABC"
+								graphical_culture = "chaoss_01"
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CCCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CCABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CDABC"
+									graphical_culture = "chaoss_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = chaplagzombie.6
+	hide_window = yes
+	
+	
+	trigger = {
+		is_ai = no
+		has_global_flag = chaplagzombieattack3 
+	}
+		
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	immediate = {
+		remove_global_flag = chaplagzombieattack3 
+	}
+}
+
+
+
+

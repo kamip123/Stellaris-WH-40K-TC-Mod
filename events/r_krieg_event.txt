@@ -1,0 +1,126 @@
+namespace = kriegrebelionevent
+
+planet_event = {
+	id = kriegrebelionevent.1
+	title = "Krieg Rebelion!"
+	desc = krieg1.1.desc
+	picture = GFX_evt_Krieg_Rebelion
+	#is_triggered_only = yes
+	fire_only_once = yes
+	location = ROOT
+	
+	trigger = {
+		years_passed > 11
+		has_planet_flag = Kriegplanet
+		owner = {
+			has_country_flag = mankind_star_empire
+		}
+	}
+	
+	immediate = {
+		
+	}
+	option = {
+		name = "Launch Nuclear Hell!"
+		planet_event = { id = kriegrebelionevent.2 }
+	}
+	option = {
+		name = "Don't do that."
+		planet_event = { id = kriegrebelionevent.3 }
+	}
+}
+
+planet_event = {
+	id = kriegrebelionevent.2
+	title = "Krieg Rebelion!"
+	desc = krieg1.2.desc
+	
+	is_triggered_only = yes
+	location = ROOT
+	
+	trigger = {
+		
+	}
+	
+	immediate = {
+		set_planet_flag = Kriegplanett
+		
+		create_country = {
+			name = "Rebels"
+			type = faction
+		}
+		create_species = {
+			name = "Rebels"
+			class = random
+			portrait = random
+			traits = random
+		}
+		
+		while = {
+			count = 12										#was 25
+			create_army = {
+				name = "Rebel army"
+				owner = last_created
+				species = last_created
+				type = "imperial_guard_big"
+			}					
+		}
+		
+		change_pc = pc_nuked
+		
+		owner = { save_event_target_as = nukeplanetowner }
+		
+		while = {
+			count = 10
+			create_army = {
+				name = "Death Korps of Krieg"
+				owner = event_target:nukeplanetowner
+				species = owner_main_species
+				type = "Death_Korps_of_Krieg"
+			}					
+		}		
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = kriegrebelionevent.3
+	title = "Krieg Rebelion!"
+	desc = krieg1.3.desc
+	
+	is_triggered_only = yes
+	location = ROOT
+	
+	trigger = {
+		
+	}
+	
+	immediate = {
+	
+		create_country = {
+			name = "Rebels"
+			type = faction
+		}
+		create_species = {
+			name = "Rebels"
+			class = random
+			portrait = random
+			traits = random
+		}
+		
+		while = {
+			count = 30										#was 60
+			create_army = {
+				name = "Rebel army"
+				owner = last_created
+				species = last_created
+				type = "imperial_guard_big"
+			}					
+		}	
+	}
+	option = {
+		name = "Ok"
+	}
+}

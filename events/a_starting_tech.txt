@@ -1,0 +1,208 @@
+namespace = startingtech
+#######################################
+############# trigger #################
+#######################################
+country_event = {
+	id = startingtech.90
+	hide_window = yes
+	fire_only_once = yes
+	#is_triggered_only = yes
+	trigger = {
+
+	}
+	
+	immediate = {
+		country_event = { id = startingtech.1 }
+		country_event = { id = startingtech.2 }
+		country_event = { id = startingtech.3 }
+		#country_event = { id = startingtech.4 }
+		#country_event = { id = startingtech.5 }
+		#country_event = { id = startingtech.6 }
+		#country_event = { id = startingtech.7 }
+		#country_event = { id = startingtech.8 }
+		#country_event = { id = startingtech.9 }
+		#country_event = { id = startingtech.10 }
+		#country_event = { id = startingtech.11 }
+		#country_event = { id = startingtech.12 }
+		#country_event = { id = startingtech.13 }
+		#country_event = { id = startingtech.14 }
+		#country_event = { id = startingtech.15 }
+		#country_event = { id = startingtech.99 }
+	}
+}
+
+country_event = {
+	id = startingtech.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				not = {
+					has_country_flag = tau_empire
+				}	
+			}
+			give_technology = { tech = tech_spaceport_1 message = no}
+			give_technology = { tech = tech_spaceport_2 message = no}
+			give_technology = { tech = tech_spaceport_3 message = no}
+			give_technology = { tech = tech_spaceport_4 message = no}
+			give_technology = { tech = tech_spaceport_5 message = no}
+			give_technology = { tech = tech_spaceport_6 message = no}
+			give_technology = { tech = tech_destroyers message = no}
+			give_technology = { tech = tech_cruisers message = no}
+			give_technology = { tech = tech_battleships message = no}
+			give_technology = { tech = tech_strike_craft_1 message = no}
+			give_technology = { tech = tech_assault_armies message = no}
+			give_technology = { tech = tech_ship_armor_1 message = no}
+			give_technology = { tech = tech_thrusters_1 message = no}
+			give_technology = { tech = tech_space_defense_station_1 message = no}
+			give_technology = { tech = tech_space_defense_station_2 message = no}
+			give_technology = { tech = tech_space_defense_station_3 message = no}
+			give_technology = { tech = tech_basic_industry message = no}
+			give_technology = { tech = tech_afterburners_1 message = no}
+			give_technology = { tech = tech_mass_drivers_1 message = no}
+			give_technology = { tech = tech_autocannons_1 message = no}
+			give_technology = { tech = tech_flak_batteries_1 message = no}
+			give_technology = { tech = tech_missiles_1 message = no}
+			give_technology = { tech = tech_torpedoes_1 message = no}
+			give_technology = { tech = tech_automated_exploration message = no}
+			give_technology = { tech = tech_combat_computers_1 message = no}
+			give_technology = { tech = tech_fusion_power message = no}
+			give_technology = { tech = tech_fission_power message = no}
+			give_technology = { tech = tech_shields_1 message = no}
+			#give_technology = { tech = tech_shield_rechargers_1 message = no}
+			#give_technology = { tech = tech_shield_recharge_aura_1 message = no}
+			give_technology = { tech = tech_power_plant_1 message = no}
+			give_technology = { tech = tech_aura_quantum_destabilizer message = no}
+			give_technology = { tech = tech_lasers_1 message = no}
+			give_technology = { tech = tech_plasma_1 message = no}
+			give_technology = { tech = tech_disruptors_1 message = no}
+			give_technology = { tech = tech_energy_torpedoes_1 message = no}
+			give_technology = { tech = tech_pd_tracking_1 message = no}
+			give_technology = { tech = tech_defense_army message = no}
+			give_technology = { tech = tech_eco_simulation message = no}
+			give_technology = { tech = tech_colonization_1 message = no}
+			give_technology = { tech = tech_colonization_2 message = no}
+			give_technology = { tech = tech_colonization_3 message = no}
+			give_technology = { tech = tech_colonization_4 message = no}
+			give_technology = { tech = tech_tomb_world_adaption message = no}
+			give_technology = { tech = tech_planetary_government message = no}
+			give_technology = { tech = tech_basic_army message = no}
+			give_technology = { tech = tech_medium_army message = no}
+			give_technology = { tech = tech_advance_army message = no}
+			give_technology = { tech = tech_titans_army message = no}
+			give_technology = { tech = tech_basic_planets message = no}
+			give_technology = { tech = tech_titans message = no}
+			give_technology = { tech = tech_starbase_1 message = no}
+			give_technology = { tech = tech_starbase_2 message = no}
+			give_technology = { tech = tech_starbase_3 message = no}
+			give_technology = { tech = tech_starbase_4 message = no}
+			give_technology = { tech = tech_starbase_5 message = no}
+			#tech_psionic_theory
+			#tech_psionic_shield
+			#tech_precognition_interface
+			#tech_telepathy
+		}
+	}
+}
+
+country_event = {
+	id = startingtech.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = tau_empire	
+			}
+			give_technology = { tech = tech_spaceport_1 message = no}
+			give_technology = { tech = tech_spaceport_2 message = no}
+			#give_technology = { tech = tech_spaceport_3 message = no}
+			#give_technology = { tech = tech_spaceport_4 message = no}
+			#give_technology = { tech = tech_spaceport_5 message = no}
+			#give_technology = { tech = tech_spaceport_6 message = no}
+			#give_technology = { tech = tech_destroyers message = no}
+			#give_technology = { tech = tech_cruisers message = no}
+			#give_technology = { tech = tech_battleships message = no}
+			#give_technology = { tech = tech_strike_craft_1 message = no}
+			give_technology = { tech = tech_assault_armies message = no}
+			#give_technology = { tech = tech_ship_armor_1 message = no}
+			#give_technology = { tech = tech_thrusters_1 message = no}
+			give_technology = { tech = tech_space_defense_station_1 message = no}
+			#give_technology = { tech = tech_space_defense_station_2 message = no}
+			#give_technology = { tech = tech_space_defense_station_3 message = no}
+			give_technology = { tech = tech_basic_industry message = no}
+			#give_technology = { tech = tech_afterburners_1 message = no}
+			#give_technology = { tech = tech_mass_drivers_1 message = no}
+			#give_technology = { tech = tech_autocannons_1 message = no}
+			#give_technology = { tech = tech_flak_batteries_1 message = no}
+			#give_technology = { tech = tech_missiles_1 message = no}
+			#give_technology = { tech = tech_torpedoes_1 message = no}
+			give_technology = { tech = tech_automated_exploration message = no}
+			give_technology = { tech = tech_combat_computers_1 message = no}
+			#give_technology = { tech = tech_fusion_power message = no}
+			#give_technology = { tech = tech_fission_power message = no}
+			give_technology = { tech = tech_shields_1 message = no}
+			#give_technology = { tech = tech_shield_rechargers_1 message = no}
+			#give_technology = { tech = tech_shield_recharge_aura_1 message = no}
+			give_technology = { tech = tech_power_plant_1 message = no}
+			#give_technology = { tech = tech_aura_quantum_destabilizer message = no}
+			give_technology = { tech = tech_lasers_1 message = no}
+			give_technology = { tech = tech_plasma_1 message = no}
+			give_technology = { tech = tech_disruptors_1 message = no}
+			#give_technology = { tech = tech_energy_torpedoes_1 message = no}
+			#give_technology = { tech = tech_pd_tracking_1 message = no}
+			give_technology = { tech = tech_defense_army message = no}
+			#give_technology = { tech = tech_eco_simulation message = no}
+			#give_technology = { tech = tech_colonization_1 message = no}
+			#give_technology = { tech = tech_colonization_2 message = no}
+			#give_technology = { tech = tech_colonization_3 message = no}
+			#give_technology = { tech = tech_colonization_4 message = no}
+			#give_technology = { tech = tech_tomb_world_adaption message = no}
+			give_technology = { tech = tech_planetary_government message = no}
+			give_technology = { tech = tech_basic_army message = no}
+			#give_technology = { tech = tech_medium_army message = no}
+			#give_technology = { tech = tech_advance_army message = no}
+			#give_technology = { tech = tech_titans_army message = no}
+			give_technology = { tech = tech_basic_planets message = no}
+			#tech_psionic_theory
+			#tech_psionic_shield
+			#tech_precognition_interface
+			#tech_telepathy
+		}
+	}
+}
+
+country_event = {
+	id = startingtech.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necron_empire	
+			}
+			give_technology = { tech = tech_lasers_2 message = no}
+			give_technology = { tech = tech_lasers_3 message = no}
+			give_technology = { tech = tech_mass_drivers_2 message = no}
+			give_technology = { tech = tech_mass_drivers_3 message = no}
+			give_technology = { tech = tech_kinetic_artillery_1 message = no}
+			give_technology = { tech = tech_energy_lance_1 message = no}
+			give_technology = { tech = tech_plasma_2 message = no}
+			give_technology = { tech = tech_arc_emitter_1 message = no}
+			give_technology = { tech = tech_mining_network_1 message = no}
+			give_technology = { tech = tech_mining_network_2 message = no}
+			give_technology = { tech = tech_mining_network_3 message = no}
+			give_technology = { tech = tech_power_plant_2 message = no}
+			give_technology = { tech = tech_power_plant_3 message = no}
+			give_technology = { tech = tech_fusion_power message = no}
+			give_technology = { tech = tech_fission_power message = no}
+			give_technology = { tech = tech_cold_fusion_power message = no}
+			give_technology = { tech = tech_shields_2 message = no}
+			give_technology = { tech = tech_shields_3 message = no}
+		}
+	}
+}

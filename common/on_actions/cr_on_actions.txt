@@ -1,0 +1,81 @@
+on_game_start = {
+	events = {
+		gamee_start.1
+	}
+}
+
+on_monthly_orbital_bombardment = {
+	events = {
+		hivefleetcoming.10
+		#tyranidsaregonaeatpapasmurf.10
+		soulstorm.7
+		exterminatus.1
+	}
+}
+
+on_planet_zero_health = {
+	events = {
+		chaos.65
+		soulstorm.12
+	}
+}
+
+on_planet_attackers_win = {
+	events = {
+		chaos.66
+		soulstorm.5
+		hivefleetcoming.11
+		changeowner.1
+		changeowner.2
+		changeowner.3
+		changeowner.4
+		changeowner.5
+		changeowner.6
+		changeowner.7
+		changeowner.8
+		changeowner.9
+		changeowner.15
+		changeowner.18
+		changeowner.20
+		changeowner.23
+		changeowner.24
+		#changeowner.25
+		#changeowner.26
+		#changeowner.27
+		#changeowner.28
+	}
+}
+
+on_purge_complete = {
+	events = {
+		chaos.67
+		soulstorm.6
+	}
+}
+
+# Triggers event when a system is entered by ships from a country (not pirates or monsters) for the first time
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system = {
+	random_events = {
+		100 = 0
+		10 = fleetwarpevents.1
+		5 = fleetwarpevents.2
+		4 = fleetwarpevents.3
+		2 = fleetwarpevents.4
+		#1 = fleetwarpevents.5
+	}
+}
+
+on_building_complete = {
+	events = {
+
+	}
+}
+
+
+
+
+
+

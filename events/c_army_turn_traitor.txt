@@ -1,0 +1,109 @@
+
+namespace = chaosturnarmyintotraitors
+
+planet_event = {
+	id = chaosturnarmyintotraitors.1
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire
+		}	
+			
+			every_planet_army = {
+				while = {
+					limit = { 
+						OR = {
+							army_type = penal_legion
+							army_type = death_korps
+							army_type = death_planet_imperial_guard
+							army_type = imperial_guard_big
+							army_type = imperial_guard_medium
+							army_type = imperial_guard_small
+							army_type = conscripts
+						}
+					} 
+					random_army = {
+						limit = { 
+							OR = {
+								army_type = penal_legion
+								army_type = death_korps
+								army_type = death_planet_imperial_guard
+								army_type = imperial_guard_big
+								army_type = imperial_guard_medium
+								army_type = imperial_guard_small
+								army_type = conscripts
+							}
+						}
+						remove_army=yes 
+					}
+				} 
+			}
+	}
+	
+	option = {
+		name = "Horrible"
+	}
+}								
+
+planet_event = {
+	id = chaosturnarmyintotraitors.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire
+		}
+		create_army = {
+			name = "Chaos army"
+			owner = event_target:eyechaos_empire
+			species = owner_main_species
+			type = "assault_army"
+		}
+	}
+}
+
+country_event = {
+	id = chaosturnarmyintotraitors.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_planet_flag = Terraplanet
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = chaosturnarmyintotraitors.2 days = 1 }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

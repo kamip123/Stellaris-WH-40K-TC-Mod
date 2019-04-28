@@ -1,0 +1,1511 @@
+namespace = startalliancee
+#######################################
+############# trigger #################
+#######################################
+country_event = {
+	id = startalliancee.90
+	hide_window = yes
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		country_event = { id = startalliancee.1 }
+		country_event = { id = startalliancee.3 }
+		country_event = { id = startalliancee.5 }
+		country_event = { id = startalliancee.7 }
+		country_event = { id = startalliancee.9 }
+		country_event = { id = startalliancee.11 }
+		country_event = { id = startalliancee.13 }
+		country_event = { id = startalliancee.15 }
+		country_event = { id = startalliancee.17 }
+		country_event = { id = startalliancee.19 }
+		country_event = { id = startalliancee.21 }
+		country_event = { id = startalliancee.23 }
+		country_event = { id = startalliancee.25 }
+		country_event = { id = startalliancee.27 }
+		country_event = { id = startalliancee.29 }
+		country_event = { id = startalliancee.31 }
+		country_event = { id = startalliancee.33 }
+		country_event = { id = startalliancee.35 }
+		country_event = { id = startalliancee.37 }
+		country_event = { id = startalliancee.39 }
+		country_event = { id = startalliancee.41 }
+		country_event = { id = startalliancee.43 }
+		country_event = { id = startalliancee.45 }
+		country_event = { id = startalliancee.47 }
+		country_event = { id = startalliancee.49 }
+		country_event = { id = startalliancee.51 }
+		country_event = { id = startalliancee.53 }
+		country_event = { id = startalliancee.55 }
+		country_event = { id = startalliancee.555 days = 1 }
+		#country_event = { id = startalliancee.57 } ### Event not found?
+	}
+}
+############ chaos ####################
+country_event = {
+	id = startalliancee.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = maelstormchaos_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:eyechaos_empire_alliance
+				name = "Chaos Undivided"
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = sabbathchaos_empire
+			}
+			join_alliance = {
+				who = event_target:eyechaos_empire_alliance
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = calixis_cheresy_star_empire
+			}
+			join_alliance = {
+				who = event_target:eyechaos_empire_alliance
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed 
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = southchaos_empire
+			}
+			join_alliance = {
+				who = event_target:eyechaos_empire_alliance
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eastchaos_empire
+			}
+			join_alliance = {
+				who = event_target:eyechaos_empire_alliance
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.11
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = rebelchaos_empire
+			}
+			join_alliance = {
+				who = event_target:eyechaos_empire_alliance
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+############ orks ####################
+country_event = {
+	id = startalliancee.12
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.13
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = dregruk_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:ghazgkull_empire_alliance
+				name = "Orks Waaaaagh!"
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.14
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.15
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = archkilla_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:ghazgkull_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.16
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.17
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = gorbad_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:ghazgkull_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.18
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.19
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = charadon_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:ghazgkull_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.20
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.21
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = redsunsystem_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:ghazgkull_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.22
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.23
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = jagga_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:ghazgkull_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.24
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.25
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = gathrog_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:ghazgkull_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+############ eldar ####################
+
+country_event = {
+	id = startalliancee.26
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.27
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eldar_ulthwe_empire
+			}
+			save_event_target_as = eldar_ulthwe_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eldar_ymeloc_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:eldar_ulthwe_empire_alliance
+				name = "Eldars"
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.28
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.29
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eldar_ulthwe_empire
+			}
+			save_event_target_as = eldar_ulthwe_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eldar_bieltan_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:eldar_ulthwe_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.30
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.31
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eldar_ulthwe_empire
+			}
+			save_event_target_as = eldar_ulthwe_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eldar_alaitoc_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:eldar_ulthwe_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.32
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.33
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = eldar_ulthwe_empire
+			}
+			save_event_target_as = eldar_ulthwe_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eldar_iyanden_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:eldar_ulthwe_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+############ necron ####################
+country_event = {
+	id = startalliancee.34
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.35
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronoruscar_empire
+			}
+			save_event_target_as = necronoruscar_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = necronsautekh_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:necronoruscar_empire_alliance
+				name = "Necrons"
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.36
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.37
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronoruscar_empire
+			}
+			save_event_target_as = necronoruscar_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = necronkardenath_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:necronoruscar_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.38
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.39
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronoruscar_empire
+			}
+			save_event_target_as = necronoruscar_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = necronnovokh_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:necronoruscar_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.40
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.41
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronoruscar_empire
+			}
+			save_event_target_as = necronoruscar_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = necronmaynarkh_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:necronoruscar_empire_alliance
+
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.42
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.43
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = necronoruscar_empire
+			}
+			save_event_target_as = necronoruscar_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = necronbone_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:necronoruscar_empire_alliance
+
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+############ xenos ####################
+country_event = {
+	id = startalliancee.44
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.45
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = terellian_star_empire
+			}
+			save_event_target_as = terellian_star_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = hellgrammite_star_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:terellian_star_empire_alliance
+				name = "United xenos races"
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.46
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.47
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = terellian_star_empire
+			}
+			save_event_target_as = terellian_star_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = jorgalleg_star_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:terellian_star_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.48
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.49
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = terellian_star_empire
+			}
+			save_event_target_as = terellian_star_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = rakgol_star_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:terellian_star_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.50
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.51
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = terellian_star_empire
+			}
+			save_event_target_as = terellian_star_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = slaugth_star_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:terellian_star_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.52
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.53
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = terellian_star_empire
+			}
+			save_event_target_as = terellian_star_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = tau_star_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:terellian_star_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+country_event = {
+	id = startalliancee.54
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = startalliancee.55
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = terellian_star_empire
+			}
+			save_event_target_as = terellian_star_empire_alliance
+		}
+		every_country = {
+			limit = {
+				has_country_flag = calixis_human_star_empire
+				#has_federation = no
+			}
+			join_alliance = {
+				who = event_target:terellian_star_empire_alliance
+				
+				override_requirements = yes
+			}
+			set_country_flag = ai_no_leave_fed
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+country_event = {
+	id = startalliancee.555
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = tau_star_empire
+			}
+			save_event_target_as = tau_star_empire
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			save_event_target_as = eyechaos_empire
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eldar_dark_com_empire
+			}
+			save_event_target_as = eldar_dark_com_empire
+		}
+		every_country = {
+			limit = {
+				has_country_flag = eldar_ulthwe_empire
+			}
+			save_event_target_as = eldar_ulthwe_empire
+		}
+		every_country = {
+			limit = {
+				has_country_flag = necronoruscar_empire
+			}
+			save_event_target_as = necronoruscar_empire
+		}
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire
+		}
+
+		every_country = {
+			limit = {
+				has_country_flag = mankind_star_empire
+			}
+			##### minor xenos
+			declare_war = {
+				target = event_target:tau_star_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+			##### eldar
+			declare_war = {
+				target = event_target:eldar_ulthwe_empire
+				name = "Purge Eldars"
+				attacker_war_goal = wg_colossus
+			}
+			##### chaos
+			declare_war = {
+				target = event_target:eyechaos_empire
+				name = "Purge Cheretics"
+				attacker_war_goal = wg_colossus
+			}
+			##### Necrons
+			declare_war = {
+				target = event_target:necronoruscar_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+			##### Dark eldars
+			declare_war = {
+				target = event_target:eldar_dark_com_empire
+				name = "Purge Dark Eldars"
+				attacker_war_goal = wg_colossus
+			}
+			##### orks
+			declare_war = {
+				target = event_target:ghazgkull_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+		}
+		
+		every_country = {
+			limit = {
+				has_country_flag = tau_star_empire
+			}
+			##### eldar
+			declare_war = {
+				target = event_target:eldar_ulthwe_empire
+				name = "Purge Eldars"
+				attacker_war_goal = wg_colossus
+			}
+			##### chaos
+			declare_war = {
+				target = event_target:eyechaos_empire
+				name = "Purge Cheretics"
+				attacker_war_goal = wg_colossus
+			}
+			##### Necrons
+			declare_war = {
+				target = event_target:necronoruscar_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+			##### Dark eldars
+			declare_war = {
+				target = event_target:eldar_dark_com_empire
+				name = "Purge Dark Eldars"
+				attacker_war_goal = wg_colossus
+			}
+			##### orks
+			declare_war = {
+				target = event_target:ghazgkull_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+		}
+		
+		every_country = {
+			limit = {
+				has_country_flag = eldar_ulthwe_empire
+			}
+			##### chaos
+			declare_war = {
+				target = event_target:eyechaos_empire
+				name = "Purge Cheretics"
+				attacker_war_goal = wg_colossus
+			}
+			##### Necrons
+			declare_war = {
+				target = event_target:necronoruscar_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+			##### Dark eldars
+			declare_war = {
+				target = event_target:eldar_dark_com_empire
+				name = "Purge Dark Eldars"
+				attacker_war_goal = wg_colossus
+			}
+			##### orks
+			declare_war = {
+				target = event_target:ghazgkull_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+		}
+		
+		every_country = {
+			limit = {
+				has_country_flag = eyechaos_empire
+			}
+			##### Necrons
+			declare_war = {
+				target = event_target:necronoruscar_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+			##### Dark eldars
+			declare_war = {
+				target = event_target:eldar_dark_com_empire
+				name = "Purge Dark Eldars"
+				attacker_war_goal = wg_colossus
+			}
+			##### orks
+			declare_war = {
+				target = event_target:ghazgkull_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+		}
+		
+		every_country = {
+			limit = {
+				has_country_flag = necronoruscar_empire
+			}
+			##### Dark eldars
+			declare_war = {
+				target = event_target:eldar_dark_com_empire
+				name = "Purge Dark Eldars"
+				attacker_war_goal = wg_colossus
+			}
+			##### orks
+			declare_war = {
+				target = event_target:ghazgkull_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+		}
+		
+		every_country = {
+			limit = {
+				has_country_flag = eldar_dark_com_empire
+			}
+			##### orks
+			declare_war = {
+				target = event_target:ghazgkull_empire
+				name = "Purge Xenos"
+				attacker_war_goal = wg_colossus
+			}
+		}
+	}
+}
+
+
+

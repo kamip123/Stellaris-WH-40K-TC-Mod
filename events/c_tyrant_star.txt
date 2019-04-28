@@ -1,0 +1,45 @@
+namespace = unrestcalixistyrantstar
+
+country_event = {
+	id = unrestcalixistyrantstar.1
+	title = "Strange Phenomena"
+	desc = tyrstar.1.desc
+	picture = GFX_evt_Tyran_Star
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		years_passed > 13
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_planet_flag = calixistyrantstar
+			}
+			planet_event = { id = unrestcalixistyrantstar.2 }
+		}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = unrestcalixistyrantstar.2
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		add_modifier = {
+			modifier = rebelionsmall
+			days = 7200 # 20 years
+		}
+	}
+	option = {
+		name = "Ok"
+	}
+}

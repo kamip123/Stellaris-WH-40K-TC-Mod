@@ -1,0 +1,236 @@
+
+namespace = orks2
+
+country_event = {
+	id = orks2.1234
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		years_passed > 2
+	}
+	
+	immediate = {
+		set_global_flag = orksatackstart2
+	}
+}
+
+country_event = {
+	id = orks2.2
+	hide_window = yes
+	
+	trigger = {
+		is_ai = no
+		NOT = {
+			has_global_flag = orksatack2 
+		}
+		has_global_flag = orksatackstart2
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				NOT = { has_planet_flag = orksdontattackxd }
+			}
+			planet_event = { id = orks2.3 }
+			set_planet_flag = orksdontattackxd
+		}	
+		set_global_flag = orksatack2
+	}
+}
+
+planet_event = {
+	id = orks2.3
+	title = "Orks"
+	desc = orkwa1.5.desc
+	picture = GFX_evt_ork_fleet
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		planet_event = { id = orks2.4 days = 50 }
+	}
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+planet_event = {
+	id = orks2.4
+	title = "Orks"
+	desc = orkwa1.6.desc
+	picture = GFX_evt_orks_attack_planet
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+		remove_planet_flag = orksdontattackxd
+		every_country = {
+			limit = {
+				has_country_flag = ghazgkull_empire
+			}
+			save_event_target_as = ghazgkull_empire
+		}
+		while = {
+			count = 3									#was 6
+			create_army = {
+				name = "Orks"
+				owner = event_target:ghazgkull_empire
+				species = owner_main_species
+				type = "Ork_Nobz"
+			}					
+		}
+		while = {
+			count = 3									#was 6
+			create_army = {
+				name = "Orks"
+				owner = event_target:ghazgkull_empire
+				species = owner_main_species
+				type = "Stormboyz"
+			}					
+		}
+		while = {
+			count = 8									#was 16
+			create_army = {
+				name = "Orks"
+				owner = event_target:ghazgkull_empire
+				species = owner_main_species
+				type = "Ork_Boyz"
+			}					
+		}
+		while = {
+			count = 8									#was 16
+			create_army = {
+				name = "Orks"
+				owner = event_target:ghazgkull_empire
+				species = owner_main_species
+				type = "Gretchin"
+			}					
+		}
+		while = {
+			count = 3									#was 6
+			create_army = {
+				name = "Orks"
+				owner = event_target:ghazgkull_empire
+				species = owner_main_species
+				type = "Kommandoz"
+			}					
+		}
+		while = {
+			count = 1									#was 2
+			create_army = {
+				name = "Orks"
+				owner = event_target:ghazgkull_empire
+				species = owner_main_species
+				type = "Gargant"
+			}					
+		}		
+		
+		create_fleet = { name = "Ork fleet" }	
+				last_created_fleet = {
+					set_owner = event_target:ghazgkull_empire
+							create_ship = {
+								name = random
+								design = "NAME_OCCABC"
+								graphical_culture = "orc_01"
+							}	
+							while = {
+								count = 28
+								create_ship = {
+									name = random
+									design = "NAME_OCCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_OBABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_OBABCD"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_OCABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_OCABCD"
+									graphical_culture = "orc_01"
+								}
+							}
+							while = {
+								count = 12
+								create_ship = {
+									name = random
+									design = "NAME_ODABC"
+									graphical_culture = "orc_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+							queue_actions = {
+								repeat = {
+									find_closest_planet = {
+										trigger = {
+											id = "orkswagh2.60.trigger.1"
+											exists = owner
+											#NOT = {
+											#	has_planet_flag = dontattackitagainxd
+											#}
+										}
+										found_planet = {
+											orbit_planet = THIS
+											wait = 20
+											#planet_event = { id = hivefleetcoming.10 }
+										}
+									}
+								}
+							}
+				}
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = orks2.5
+	hide_window = yes
+	
+	
+	trigger = {
+		is_ai = no
+		has_global_flag = orksatack2 
+	}
+		
+	mean_time_to_happen = {
+		months = 40
+	}
+	
+	immediate = {
+		remove_global_flag = orksatack2 
+	}
+}

@@ -1,0 +1,981 @@
+namespace = hivefleetbehemothcoming
+
+country_event = {
+	id = hivefleetbehemothcoming.1
+	title = "Hive fleet!"
+	desc = tyrbeh1.1.desc
+	picture = GFX_evt_Planet_Barren_Living
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		years_passed > 12
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		create_species = {
+			name = "Tyranids"
+			class = SWARM
+			portrait = random
+			traits = random
+		}
+		create_country = {
+			name = "Chaos"
+			type = "tyranids"
+			species = last_created
+			name_list = "Extradimensional"
+			flag = {
+				icon= {
+					category = "zoological"
+					file = "flag_zoological_5.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "circle.dds"
+				}
+				colors={
+					"red"
+					"blue"
+					"null"
+					"null"
+				}
+			}
+		}
+		
+		every_country = {
+			limit = { is_country_type = default }
+			establish_communications_no_message = last_created_country
+		}
+		
+		last_created_species = { save_event_target_as = tyranid_species }
+		
+		last_created_country = { 
+			save_event_target_as = tyranidhivefleet
+			set_country_flag = tyranidhivefleetxd
+			set_policy = {
+				policy = orbital_bombardment
+				option = orbital_bombardment_full
+				cooldown = no
+			}
+			add_modifier = {
+				modifier = "tyranid_ships"
+			}
+		}
+		
+		if = {
+			limit = {
+				any_owned_planet = {
+					has_planet_flag = Tyranplanet
+				}
+			}
+			if = {
+				limit = {
+					any_owned_planet = {
+						has_planet_flag = Tyranplanet
+						has_ground_combat = no
+					}
+				}
+				random_owned_planet = {
+					limit = {
+						has_planet_flag = Tyranplanet
+					}
+					planet_event = { id = hivefleetbehemothcoming.2 days = 1 }					
+				}
+				else = {
+					country_event = { id = hivefleetbehemothcoming.99 days = 1 }
+				}
+			}
+			
+			else = {
+				if = {
+					limit = {
+						any_owned_planet = {
+							has_planet_flag = hivefleetbehemoth
+							NOT = {
+								has_planet_flag = Macraggeplanet
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_owned_planet = {
+								has_planet_flag = hivefleetbehemoth
+								NOT = {
+									has_planet_flag = Macraggeplanet
+								}
+								has_ground_combat = no
+							}
+						}
+						random_owned_planet = {
+							limit = {
+								has_planet_flag = hivefleetbehemoth
+								NOT = {
+									has_planet_flag = Macraggeplanet
+								}
+								has_ground_combat = no
+							}
+							planet_event = { id = hivefleetbehemothcoming.2 days = 1 }
+						}	
+						else = {
+							country_event = { id = hivefleetbehemothcoming.99 days = 1 }
+						}
+					}
+					else = {		
+						random_owned_planet = {
+							limit = {
+								has_ground_combat = no
+							}
+							planet_event = { id = hivefleetbehemothcoming.2 days = 1 }
+						}
+					}
+				}				
+			}
+		}			
+	}
+	option = {
+		name = "Ok"
+	}
+}	
+
+country_event = {
+	id = hivefleetbehemothcoming.90
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				any_owned_planet = {
+					has_planet_flag = Prandiumplanet
+				}
+			}
+			random_owned_planet = {
+				limit = { 
+					has_planet_flag = Prandiumplanet
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+					}
+					planet_event = { id = hivefleetbehemothcoming.91 days = 1 }
+					owner = {
+						country_event = { id = hivefleetbehemothcoming.6 days = 100 }
+					}
+					else = {
+						owner = {
+							country_event = { id = hivefleetbehemothcoming.90 days = 1 }
+						}
+					}
+				}	
+			}	
+			else = {
+				country_event = { id = hivefleetbehemothcoming.6 days = 100 }
+			}
+		}
+		
+	}
+}	
+
+country_event = {
+	id = hivefleetbehemothcoming.92
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				any_owned_planet = {
+					has_planet_flag = Macraggeplanet
+				}
+			}
+			random_owned_planet = {
+				limit = { 
+					has_planet_flag = Macraggeplanet
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+					}
+					planet_event = { id = hivefleetbehemothcoming.91 days = 1 }
+					owner = {
+						country_event = { id = hivefleetbehemothcoming.8 days = 300 }
+					}
+					else = {
+						owner = {
+							country_event = { id = hivefleetbehemothcoming.92 days = 1 }
+						}
+					}
+				}	
+			}
+			else = {
+				country_event = { id = hivefleetbehemothcoming.20 days = 1 }
+				country_event = { id = hivefleetbehemothcoming.21 days = 2 }
+			}			
+		}
+		
+	}
+}	
+
+country_event = {
+	id = hivefleetbehemothcoming.99
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				any_owned_planet = {
+					has_planet_flag = Tyranplanet
+				}
+			}
+			if = {
+				limit = {
+					any_owned_planet = {
+						has_planet_flag = Tyranplanet
+						has_ground_combat = no
+					}
+				}
+				random_owned_planet = {
+					limit = {
+						has_planet_flag = Tyranplanet
+					}
+					planet_event = { id = hivefleetbehemothcoming.2 days = 1 }					
+				}
+				else = {
+					country_event = { id = hivefleetbehemothcoming.99 days = 1 }
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						any_owned_planet = {
+							has_planet_flag = hivefleetbehemoth
+							NOT = {
+								has_planet_flag = Macraggeplanet
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_owned_planet = {
+								has_planet_flag = hivefleetbehemoth
+								NOT = {
+									has_planet_flag = Macraggeplanet
+								}
+								has_ground_combat = no
+							}
+						}
+						random_owned_planet = {
+							limit = {
+								has_planet_flag = hivefleetbehemoth
+								NOT = {
+									has_planet_flag = Macraggeplanet
+								}
+								has_ground_combat = no
+							}
+							planet_event = { id = hivefleetbehemothcoming.2 days = 1 }
+						}	
+						else = {
+							country_event = { id = hivefleetbehemothcoming.99 days = 1 }
+						}
+					}
+					else = {		
+						random_owned_planet = {
+							planet_event = { id = hivefleetbehemothcoming.2 days = 1 }
+						}
+					}
+				}	
+			}	
+		}	
+	}
+}	
+
+planet_event = {
+	id = hivefleetbehemothcoming.2
+	title = "Hive fleet!"
+	desc = tyrbeh1.2.desc
+	picture = GFX_evt_tyranid_invasion
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = tyranidhivefleetxd
+			}
+			save_event_target_as = tyranidhivefleetxdtarget
+		}
+		
+							while = {
+								count = 1										#was 3
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Viciator"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hierophant"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Dominatrix"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hierodule"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Harridan"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hive_Tyrant"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Swarmlord"
+								}
+							}
+							while = {
+								count = 2										#was 5
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Lictor"
+								}
+							}
+							while = {
+								count = 3										#was 6
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Exocrine"
+								}
+							}
+							while = {
+								count = 10										#was 20
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hormagaunt"
+								}
+							}
+							while = {
+								count = 10										#was 20
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Tyranid_Warrior"
+								}
+							}	
+						create_fleet = {
+							name = "Tyranid hive fleet"
+							effect = {
+								set_owner = event_target:tyranidhivefleetxdtarget
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "tyranid_01"
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "Death's Head"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Bug Crusher"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 40
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}
+								save_event_target_as = tyranidhivemind_fleet
+								set_aggro_range = 500
+								set_fleet_stance = passive
+								set_aggro_range_measure_from = self
+								
+								############# need testing
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "tyranid.60.trigger.2"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+										find_closest_system = {
+											trigger = {
+												id = "tyranid.60.trigger.1"
+												any_planet = {
+													exists = owner
+													has_ground_combat = no
+												}
+												NOT = {
+													any_ship_in_system = {
+														fleet = { is_same_value = event_target:tyranidhivemind_fleet }
+													}
+												}
+											}
+											found_system = {
+												move_to = THIS
+											}	
+										}
+									}
+								}			
+							}
+						}	
+	}
+	option = {
+		name = "Ok"
+		hidden_effect = {
+			owner = {
+				country_event = { id = hivefleetbehemothcoming.3 days = 10 }
+				country_event = { id = hivefleetbehemothcoming.4 days = 20 }
+				country_event = { id = hivefleetbehemothcoming.5 days = 30 }
+			}
+		}
+	}
+}	
+
+planet_event = {
+	id = hivefleetbehemothcoming.91
+	title = "Hive fleet!"
+	desc = tyrbeh1.10.desc
+	picture = GFX_evt_tyranids_ultramarines
+	#fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = tyranidhivefleetxd
+			}
+			save_event_target_as = tyranidhivefleetxdtarget
+		}
+		
+		every_country = {
+			limit = {
+				has_country_flag = mankind_star_empire
+			}
+			save_event_target_as = mankind_star_empire
+		}
+		
+							while = {
+								count = 1										#was 3
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Viciator"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hierophant"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Dominatrix"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hierodule"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Harridan"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hive_Tyrant"
+								}
+							}
+							while = {
+								count = 2										#was 4
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Swarmlord"
+								}
+							}
+							while = {
+								count = 2										#was 5
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Lictor"
+								}
+							}
+							while = {
+								count = 3										#was 6
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Exocrine"
+								}
+							}
+							while = {
+								count = 10										#was 20
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Hormagaunt"
+								}
+							}
+							while = {
+								count = 10										#was 20
+								create_army = {
+									name = "Tyranid army"
+									owner = event_target:tyranidhivefleetxdtarget
+									species = last_created
+									type = "Tyranid_Warrior"
+								}
+							}
+		
+						create_army = {
+							name = "Space Marines"
+							owner = event_target:mankind_star_empire
+							species = owner_main_species
+							type = "ultramarines"
+						}
+						create_army = {
+							name = "Space Marines"
+							owner = event_target:mankind_star_empire
+							species = owner_main_species
+							type = "ultramarines"
+						}
+						create_army = {
+							name = "Space Marines"
+							owner = event_target:mankind_star_empire
+							species = owner_main_species
+							type = "ultramarines"
+						}
+						create_army = {
+							name = "Space Marines"
+							owner = event_target:mankind_star_empire
+							species = owner_main_species
+							type = "ultramarines"
+						}
+						create_army = {
+							name = "Space Marines"
+							owner = event_target:mankind_star_empire
+							species = owner_main_species
+							type = "ultramarines"
+						}
+						create_army = {
+							name = "Space Marines"
+							owner = event_target:mankind_star_empire
+							species = owner_main_species
+							type = "ultramarines"
+						}
+						while = {
+							count = 20
+							create_army = {
+								name = "Imperial Guard"
+								owner = event_target:mankind_star_empire
+								species = owner_main_species
+								type = "Armoured_Regiment"
+							}
+						}
+		
+						create_leader = {
+							type = admiral
+							species = last_created
+							name = random
+							skill = 5000
+							set_age = 10
+							traits = {
+								trait = leader_trait_void_swimmer
+							}
+						}	
+						create_fleet = {
+							name = "Tyranid hive fleet"
+							effect = {
+								set_owner = event_target:tyranidhivefleetxdtarget
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "tyranid_01"
+								}
+								assign_leader = last_created_leader
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "Death's Head"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Bug Crusher"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 40
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}
+								save_event_target_as = tyranidhivemind_fleet
+								set_aggro_range = 500
+								set_fleet_stance = passive
+								set_aggro_range_measure_from = self
+								
+								############# need testing
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "tyranid.60.trigger.2"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+										find_closest_system = {
+											trigger = {
+												id = "tyranid.60.trigger.1"
+												any_planet = {
+													exists = owner
+													has_ground_combat = no
+												}
+												NOT = {
+													any_ship_in_system = {
+														fleet = { is_same_value = event_target:tyranidhivemind_fleet }
+													}
+												}
+											}
+											found_system = {
+												move_to = THIS
+											}	
+										}
+									}
+								}			
+							}
+						}
+		
+		
+		
+	}
+	option = {
+		name = "Ok"
+	}
+}	
+
+country_event = {
+	id = hivefleetbehemothcoming.3
+	title = "Xenos"
+	desc = tyrbeh1.3.desc
+	picture = GFX_evt_Inquisitor_And_Reutine
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.4
+	title = "Xenos"
+	desc = tyrbeh1.4.desc
+	picture = GFX_evt_Planet_Tyranid_Invasion
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.5
+	title = "Xenos"
+	desc = tyrbeh1.5.desc
+	picture = GFX_evt_Astra_Militarum_vs_Tyranids
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		country_event = { id = hivefleetbehemothcoming.90 days = 1 }
+	}
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.6
+	title = "Xenos"
+	desc = tyrbeh1.6.desc
+	picture = GFX_evt_tyranids_ultramarines
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		country_event = { id = hivefleetbehemothcoming.7 days = 8 }
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.7
+	title = "Xenos"
+	desc = tyrbeh1.7.desc
+	picture = GFX_evt_Marneus_Calgar
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		country_event = { id = hivefleetbehemothcoming.92 days = 100 }
+	}
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.8
+	title = "Xenos"
+	desc = tyrbeh1.8.desc
+	picture = GFX_evt_throne_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.9
+	title = "Xenos"
+	desc = tyrbeh1.9.desc
+	picture = GFX_evt_tyranids_ultramarines
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.20
+	title = "Xenos"
+	desc = tyrbeh1.20.desc
+	picture = GFX_evt_tyranids_ultramarines
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		
+	}
+	option = {
+		name = "Ok"
+	}
+}
+
+country_event = {
+	id = hivefleetbehemothcoming.21
+	title = "Xenos"
+	desc = tyrbeh1.21.desc
+	picture = GFX_evt_tyranids_ultramarines
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		
+	}
+	option = {
+		name = "Ok"
+	}
+}

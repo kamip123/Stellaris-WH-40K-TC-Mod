@@ -1,0 +1,33 @@
+namespace = ageofapostasyst
+
+country_event = {
+	id = ageofapostasyst.1
+	title = "Sebastian Thor"
+	desc = sebtor.1.desc
+	picture = GFX_evt_Sebastian_Thor
+	fire_only_once = yes
+	#is_triggered_only = yes
+
+	trigger = {
+		years_passed > 4
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = "Sebastian Thor"
+			skill = 3000
+			event_leader = yes
+			#effect = {
+			#	set_leader_flag = gratheroforfiftyyears
+			#}
+		}
+		#country_event = { id = redemptioncrusadesevents.2 days = 3000 }
+	}
+
+	option = {
+		name = "Amazing!"
+	}
+}

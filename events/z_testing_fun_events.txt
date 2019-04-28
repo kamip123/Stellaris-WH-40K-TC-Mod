@@ -1,0 +1,290 @@
+namespace = testandfunhaha
+
+
+planet_event = {
+	id = testandfunhaha.1
+	title = "Hive fleet!"
+	desc = tyrbeh1.2.desc
+	picture = GFX_evt_throne_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	immediate = {
+		create_species = {
+			name = "Tyranids"
+			class = SWARM
+			portrait = random
+			traits = random
+		}
+		create_country = {
+			name = "Chaos"
+			type = "tyranids"
+			species = last_created
+			name_list = "Extradimensional"
+			flag = {
+				icon= {
+					category = "zoological"
+					file = "flag_zoological_5.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "circle.dds"
+				}
+				colors={
+					"red"
+					"blue"
+					"null"
+					"null"
+				}
+			}
+		}
+	
+		every_country = {
+			limit = { is_country_type = default }
+			establish_communications_no_message = last_created_country
+		}
+		
+		last_created_species = { save_event_target_as = tyranid_species }
+		
+		last_created_country = { 
+			save_event_target_as = tyranidhivefleet
+			set_country_flag = tyranidhivefleetxd
+			set_policy = {
+				policy = orbital_bombardment
+				option = orbital_bombardment_full
+				cooldown = no
+			}
+			add_modifier = {
+				modifier = "tyranid_ships"
+			}
+		}
+		
+		every_country = {
+			limit = {
+				has_country_flag = tyranidhivefleetxd
+			}
+			save_event_target_as = tyranidhivefleetxdtarget
+		}
+		
+								
+						create_fleet = {
+							name = "Tyranid hive fleet"
+							effect = {
+								set_owner = event_target:tyranidhivefleetxdtarget
+								create_ship = {
+									name = random
+									design = "Blade"
+									graphical_culture = "tyranid_01"
+								}
+								while = {
+									count = 5
+									create_ship = {
+										name = random
+										design = "Spearhead"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 10
+									create_ship = {
+										name = random
+										design = "Death's Head"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 20
+									create_ship = {
+										name = random
+										design = "Bug Crusher"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								while = {
+									count = 40
+									create_ship = {
+										name = random
+										design = "Blade"
+										graphical_culture = "tyranid_01"
+									}
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}
+								save_event_target_as = tyranidhivemind_fleet
+								set_aggro_range = 500
+								set_fleet_stance = passive
+								set_aggro_range_measure_from = self
+								
+								############# need testing
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "tyranid.60.trigger.2"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+										find_closest_system = {
+											trigger = {
+												id = "tyranid.60.trigger.1"
+												any_planet = {
+													exists = owner
+													has_ground_combat = no
+												}
+												NOT = {
+													any_ship_in_system = {
+														fleet = { is_same_value = event_target:tyranidhivemind_fleet }
+													}
+												}
+											}
+											found_system = {
+												move_to = THIS
+											}	
+										}
+									}
+								}			
+							}
+						}	
+	}
+	option = {
+		name = "Ok"
+	}
+}	
+
+
+
+planet_event = {
+	id = testandfunhaha.2
+	title = "Hive fleet!"
+	desc = tyrbeh1.2.desc
+	picture = GFX_evt_throne_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	immediate = {		
+		every_country = {
+			limit = {
+				has_country_flag = mankind_star_empire
+			}
+			save_event_target_as = mankind_star_empire
+		}	
+						create_fleet = {
+							name = "fleet"
+							effect = {
+								set_owner = event_target:mankind_star_empire
+								create_ship = {
+									name = random
+									design = "Eternal_Cruseder_Ship"
+									graphical_culture = "tyranid_01"
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}		
+							}
+						}
+						create_fleet = {
+							name = "fleet"
+							effect = {
+								set_owner = event_target:mankind_star_empire
+								create_ship = {
+									name = random
+									design = "Phalanx_Ship"
+									graphical_culture = "tyranid_01"
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}		
+							}
+						}
+						create_fleet = {
+							name = "fleet"
+							effect = {
+								set_owner = event_target:mankind_star_empire
+								create_ship = {
+									name = random
+									design = "Craftworld_Ship"
+									graphical_culture = "tyranid_01"
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}		
+							}
+						}
+						create_fleet = {
+							name = "fleet"
+							effect = {
+								set_owner = event_target:mankind_star_empire
+								create_ship = {
+									name = random
+									design = "Blackstonefotress"
+									graphical_culture = "tyranid_01"
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}		
+							}
+						}
+						create_fleet = {
+							name = "fleet"
+							effect = {
+								set_owner = event_target:mankind_star_empire
+								create_ship = {
+									name = random
+									design = "planetkiller"
+									graphical_culture = "tyranid_01"
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}		
+							}
+						}
+						create_fleet = {
+							name = "fleet"
+							effect = {
+								set_owner = event_target:mankind_star_empire
+								create_ship = {
+									name = random
+									design = "Space_Hulk_Ship"
+									graphical_culture = "tyranid_01"
+								}
+								set_location = {
+									target = root
+									distance = 0
+									angle = random
+								}		
+							}
+						}
+	}
+	option = {
+		name = "Ok"
+	}
+}

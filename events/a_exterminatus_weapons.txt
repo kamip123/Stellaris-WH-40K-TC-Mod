@@ -1,0 +1,126 @@
+namespace = exterminatusxd
+
+planet_event = {
+	id = exterminatusxd.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		planet_event = { id = exterminatusxd.2 days = 1 }	
+	}
+}
+###  planet killer
+planet_event = {
+	id = exterminatusxd.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		save_event_target_as = planettobeexterminated
+
+		create_ambient_object = {
+			type = "exterminatus_torpedo"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 1
+			}
+		}
+		####################################################################
+		
+		####################################################################
+		create_ambient_object = {
+			type = "planetkiller"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 1
+			}
+		}
+	}
+}
+#### blackstone fortress
+planet_event = {
+	id = exterminatusxd.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		save_event_target_as = planettobeexterminated
+
+		create_ambient_object = {
+			type = "exterminatus_torpedo"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 1
+			}
+		}
+		
+		####################################################################
+		
+		####################################################################
+		create_ambient_object = {
+			type = "blackstonefortress_dwa"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 1
+			}
+		}
+	}
+}
+## something else soon
+planet_event = {
+	id = exterminatusxd.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		save_event_target_as = planettobeexterminated
+
+		create_ambient_object = {
+			type = "exterminatus_torpedo"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 1
+			}
+		}
+		####################################################################
+		
+		####################################################################
+		create_ambient_object = {
+			type = "planetkiller"
+			location = solar_system
+		}	
+		
+		last_created_ambient_object = {
+			set_location = {
+				target = event_target:planettobeexterminated
+				distance = 0
+				angle = 1
+			}
+		}
+	}
+}

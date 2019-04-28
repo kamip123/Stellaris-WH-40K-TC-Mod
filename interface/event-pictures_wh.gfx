@@ -1,0 +1,568 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_evt_Few_Words_Picture"
+		texturefile = "gfx/event_pictures/Few_Words_Picture.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Games_Workshop_Logo"
+		texturefile = "gfx/event_pictures/Games_Workshop_Logo.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Imperium_Lore"
+		texturefile = "gfx/event_pictures/Rebelion_IG_Fight.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Chaos_Lore"
+		texturefile = "gfx/event_pictures/Chaos_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Eldar_Lore"
+		texturefile = "gfx/event_pictures/Eldar_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Dark_Eldar_Lore"
+		texturefile = "gfx/event_pictures/Dark_Eldar_Raid.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Necrons_Lore"
+		texturefile = "gfx/event_pictures/Necrons_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Tau_Lore"
+		texturefile = "gfx/event_pictures/Tau_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Ork_Lore"
+		texturefile = "gfx/event_pictures/Armageddon_Steel_Legion_Warboss_Thraka.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Tyranid_Lore"
+		texturefile = "gfx/event_pictures/Tyranid_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Terellian_Lore"
+		texturefile = "gfx/event_pictures/Various_Xenos.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Hellgrammite_Lore"
+		texturefile = "gfx/event_pictures/Various_Xenos.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Jorgalleg_Lore"
+		texturefile = "gfx/event_pictures/Various_Xenos.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_RakGol_Lore"
+		texturefile = "gfx/event_pictures/RakGol_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Slaugth_Lore"
+		texturefile = "gfx/event_pictures/Various_Xenos.dds"
+		allwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Warp_Travel_Lore"
+		texturefile = "gfx/event_pictures/Warp_Travel_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Age_Of_Apostasy"
+		texturefile = "gfx/event_pictures/Age_Of_Apostasy.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Angevin_Crusade"
+		texturefile = "gfx/event_pictures/Angevin_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Situation_Lore"
+		texturefile = "gfx/event_pictures/Situation_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Situation_Lore"
+		texturefile = "gfx/event_pictures/Situation_Lore.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Pierwsza_Black_Crusade"
+		texturefile = "gfx/event_pictures/Pierwsza_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Chaos_Attack_Planet"
+		texturefile = "gfx/event_pictures/Chaos_Attack_Planet.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Chaos_Attack_Cadia"
+		texturefile = "gfx/event_pictures/Chaos_Attack_Cadia.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Pierwsza_Black_Crusade_Cadia"
+		texturefile = "gfx/event_pictures/Pierwsza_Black_Crusade_Cadia.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Druga_Black_Crusade"
+		texturefile = "gfx/event_pictures/Druga_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Trzecia_Black_Crusade"
+		texturefile = "gfx/event_pictures/Trzecia_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Czwarta_Black_Crusade"
+		texturefile = "gfx/event_pictures/Czwarta_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Piata_Black_Crusade"
+		texturefile = "gfx/event_pictures/Piata_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Szosta_Black_Crusade"
+		texturefile = "gfx/event_pictures/Szosta_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Siodma_Black_Crusade"
+		texturefile = "gfx/event_pictures/Siodma_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Osma_Black_Crusade"
+		texturefile = "gfx/event_pictures/Osma_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Dziewiata_Black_Crusade"
+		texturefile = "gfx/event_pictures/Dziewiata_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Dziesiata_Black_Crusade"
+		texturefile = "gfx/event_pictures/Czwarta_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Dwunasta_Black_Crusade"
+		texturefile = "gfx/event_pictures/Dwunasta_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Warp_Storm"
+		texturefile = "gfx/event_pictures/Warp_Storm.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Cicatrix_Maledictum"
+		texturefile = "gfx/event_pictures/Cicatrix_Maledictum.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Blackstone_Fortress"
+		texturefile = "gfx/event_pictures/Blackstone_Fortress.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Trzynasta_Black_Crusade"
+		texturefile = "gfx/event_pictures/Trzynasta_Black_Crusade.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Fall_Of_Cadia"
+		texturefile = "gfx/event_pictures/Fall_Of_Cadia.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Rebelion_in_Space"
+		texturefile = "gfx/event_pictures/Rebelion_in_Space.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Warp_Waves"
+		texturefile = "gfx/event_pictures/Warp_Waves.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Black_Tempalrs"
+		texturefile = "gfx/event_pictures/Black_Tempalrs.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Black_Tempalrs_Dwa"
+		texturefile = "gfx/event_pictures/Black_Tempalrs_Dwa.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Warp_Devour_Planet"
+		texturefile = "gfx/event_pictures/Warp_Devour_Planet.dds"
+		allwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Rebelion_Krieg_Fight"
+		texturefile = "gfx/event_pictures/Rebelion_Krieg_Fight.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Rebelion_IG_Fight"
+		texturefile = "gfx/event_pictures/Rebelion_IG_Fight.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Rebelion_in_Space"
+		texturefile = "gfx/event_pictures/Rebelion_in_Space.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_Space_Hulk_Tyranids"
+		texturefile = "gfx/event_pictures/Space_Hulk_Tyranids.dds"
+		allwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Tyranid_Hive_Fleet"
+		texturefile = "gfx/event_pictures/Tyranid_Hive_Fleet.dds"
+		allwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_cadians_vs_orks"
+		texturefile = "gfx/event_pictures/cadians_vs_orks.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Space_Hulk_Sin"
+		texturefile = "gfx/event_pictures/Space_Hulk_Sin.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Civilians_Port_Bay"
+		texturefile = "gfx/event_pictures/Civilians_Port_Bay.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Plague_Zombie_Poster"
+		texturefile = "gfx/event_pictures/Plague_Zombie_Poster.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Zombie_Last_Stand"
+		texturefile = "gfx/event_pictures/Zombie_Last_Stand.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_No_Drought_Planet"
+		texturefile = "gfx/event_pictures/No_Drought_Planet.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Drought_Planet"
+		texturefile = "gfx/event_pictures/Drought_Planet.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_No_Drought_Planet"
+		texturefile = "gfx/event_pictures/No_Drought_Planet.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Nurgle_Infestation"
+		texturefile = "gfx/event_pictures/Nurgle_Infestation.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Chaos_Suspected"
+		texturefile = "gfx/event_pictures/Chaos_Suspected.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Inquisitor_And_Reutine"
+		texturefile = "gfx/event_pictures/Inquisitor_And_Reutine.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Exterminatus_Jeden"
+		texturefile = "gfx/event_pictures/Exterminatus_Jeden.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Exterminatus_Dwa"
+		texturefile = "gfx/event_pictures/Exterminatus_Dwa.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Ig_Rebellion"
+		texturefile = "gfx/event_pictures/Ig_Rebellion.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Chaos_Rising"
+		texturefile = "gfx/event_pictures/Chaos_Rising.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Tyran_Star"
+		texturefile = "gfx/event_pictures/Tyran_Star.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Supernova_Destruction"
+		texturefile = "gfx/event_pictures/Supernova_Destruction.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Space_Battle_Chaos_Imperium"
+		texturefile = "gfx/event_pictures/Space_Battle_Chaos_Imperium.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Space_Battle_Chaos_Imperium_Dwa"
+		texturefile = "gfx/event_pictures/Space_Battle_Chaos_Imperium_Dwa.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_STC_STC"
+		texturefile = "gfx/event_pictures/STC_STC.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Orks_Attack_Forge"
+		texturefile = "gfx/event_pictures/Orks_Attack_Forge.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Dark_Eldar_Info"
+		texturefile = "gfx/event_pictures/Dark_Eldar_Info.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Dark_Eldar_Raid"
+		texturefile = "gfx/event_pictures/Dark_Eldar_Raid.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Aints_Appear"
+		texturefile = "gfx/event_pictures/Aints_Appear.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Saints_Dissapear"
+		texturefile = "gfx/event_pictures/Saints_Dissapear.dds"
+		allwaystransparent = no		
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_evt_Necrons_Attack_Jeden"
+		texturefile = "gfx/event_pictures/Necrons_Attack_Jeden.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Necrons_Attack_Dwa"
+		texturefile = "gfx/event_pictures/Necrons_Attack_Dwa.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Necrons_Attack_Trzy"
+		texturefile = "gfx/event_pictures/Necrons_Attack_Trzy.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Necrons_Attack_Cztery"
+		texturefile = "gfx/event_pictures/Necrons_Attack_Cztery.dds"
+		allwaystransparent = no		
+	}
+	
+	
+	
+	
+	spriteType = {
+		name = "GFX_evt_Armageddon_Attack_Chaos_Jeden"
+		texturefile = "gfx/event_pictures/Armageddon_Attack_Chaos_Jeden.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Armageddon_Attack_Chaos_Dwa"
+		texturefile = "gfx/event_pictures/Armageddon_Chaos_Gry_Knights.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Armageddon_Attack_Orks_Jeden"
+		texturefile = "gfx/event_pictures/Armageddon_Steel_Legion_Warboss_Thraka.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Armageddon_Attack_Orks_Dwa"
+		texturefile = "gfx/event_pictures/Armageddon_Map.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Armageddon_Attack_Orks_Trzy"
+		texturefile = "gfx/event_pictures/Armageddon_Attack_Orks_Trzy.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Armageddon_Attack_Orks_Cztery"
+		texturefile = "gfx/event_pictures/Armageddon_Attack_Orks_Cztery.dds"
+		allwaystransparent = no		
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_evt_Graia_Anomaly"
+		texturefile = "gfx/event_pictures/Graia_Anomaly.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Graia_Ork"
+		texturefile = "gfx/event_pictures/Graia_Ork.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Graia_Chaos"
+		texturefile = "gfx/event_pictures/Graia_Chaos.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Krieg_Rebelion"
+		texturefile = "gfx/event_pictures/Krieg_Rebelion.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_genestealer_cultists_rise"
+		texturefile = "gfx/event_pictures/genestealer_cultists_rise.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Sebastian_Thor"
+		texturefile = "gfx/loadingscreens/load_19.dds"
+		allwaystransparent = no		
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_evt_Planet_Barren_Living"
+		texturefile = "gfx/event_pictures/Planet_Barren_Living.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_tyranid_invasion"
+		texturefile = "gfx/event_pictures/tyranid_invasion.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Planet_Tyranid_Invasion"
+		texturefile = "gfx/event_pictures/Planet_Tyranid_Invasion.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Astra_Militarum_vs_Tyranids"
+		texturefile = "gfx/event_pictures/Astra_Militarum_vs_Tyranids.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_tyranids_ultramarines"
+		texturefile = "gfx/event_pictures/tyranids_ultramarines.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Marneus_Calgar"
+		texturefile = "gfx/event_pictures/Marneus_Calgar.dds"
+		allwaystransparent = no		
+	}
+	
+	
+	
+	
+	
+	spriteType = {
+		name = "GFX_evt_Xenos_Picture"
+		texturefile = "gfx/event_pictures/Various_Xenos.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Praetorian_Guard_Tallarn_Orks"
+		texturefile = "gfx/event_pictures/Praetorian_Guard_Tallarn_Orks.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Calixis_Map"
+		texturefile = "gfx/event_pictures/Calixis_Map.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_ork_fleet"
+		texturefile = "gfx/event_pictures/ork_fleet.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_orks_attack_planet"
+		texturefile = "gfx/event_pictures/orks_attack_planet.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Space_Hulk_Spawn"
+		texturefile = "gfx/event_pictures/Space_Hulk_Spawn.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Ecclesiarhy_Priest"
+		texturefile = "gfx/event_pictures/Ecclesiarhy_Priest.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Space_Wolves_Jeden"
+		texturefile = "gfx/event_pictures/Space_Wolves_Jeden.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_Space_Wolves_Dwa"
+		texturefile = "gfx/event_pictures/Space_Wolves_Dwa.dds"
+		allwaystransparent = no		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_Young_Eisenhorn"
+		texturefile = "gfx/event_pictures/Young_Eisenhorn.dds"
+		allwaystransparent = no		
+	}
+	spriteType = {
+		name = "GFX_evt_ice_planet"
+		texturefile = "gfx/event_pictures/ice_planet.dds"
+		allwaystransparent = no		
+	}
+	
+}

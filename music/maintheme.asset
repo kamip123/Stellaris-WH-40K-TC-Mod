@@ -1,0 +1,5 @@
+music = {
+	name = "maintheme"
+	file = "ecclesiarchy.ogg"
+	volume = 0.82
+}

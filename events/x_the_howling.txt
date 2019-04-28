@@ -1,0 +1,657 @@
+namespace = thehowlingevents
+
+##### 1 wave
+country_event = {
+	id = thehowlingevents.1
+	title = "Xenos forces!"
+	desc = thxe.1.desc
+	fire_only_once = yes
+	picture = GFX_evt_Rebelion_in_Space
+	trigger = {
+		years_passed > 5
+		has_country_flag = mankind_star_empire
+	}
+	
+	immediate = {	
+				create_species = {
+					name = "Traitor Humans"
+					class = default
+					portrait = imp_human
+					traits = random
+				}
+				create_country = {
+					name = "Traitors"
+					type = "default"
+					species = last_created
+					name_list = "IMPERIUM1"
+					flag = {
+						icon= {
+							category = "human"
+							file = "flag_human_4.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"blue"
+							"orange"
+							"null"
+							"null"
+						}
+					}
+				}
+				every_country = {
+					establish_communications_no_message = last_created_country
+				}
+				every_country = {
+					limit = {
+						has_country_flag = mankind_star_empire
+					}
+					save_event_target_as = mankind_star_empire
+				}	
+				last_created_country = {
+					set_country_flag = mankind_traitor_two_star_empire
+					set_country_flag = human_empire
+					save_event_target_as = mankind_traitor_two_star_empire
+					add_modifier = {
+						modifier = human_ships
+						days = -1
+					}
+					add_opinion_modifier = {
+						who = event_target:mankind_star_empire
+						modifier = opinion_traitor_humans
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = mankind_star_empire
+					}
+					add_opinion_modifier = {
+						who = event_target:mankind_traitor_two_star_empire
+						modifier = opinion_traitor_humans
+					}
+				}
+	
+	
+	
+	
+	
+	
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents1
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = thehowlingevents.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents11
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = thehowlingevents.3 }
+		}
+		country_event = { id = thehowlingevents.4 days = 1 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+planet_event = {
+	id = thehowlingevents.2
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = mankind_traitor_two_star_empire
+				}
+				save_event_target_as = mankind_traitor_two_star_empire
+			}
+				while = {
+					count = 1										#was 2
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "death_korps"
+					}					
+				}
+				while = {
+					count = 1										#was 2
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "death_planet_imperial_guard"
+					}					
+				}
+				while = {
+					count = 3										#was 6
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}					
+				}
+				while = {
+					count = 2										#was 4
+					create_army = {
+						name = "Rebel army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}					
+				}
+				while = {
+					count = 1										#was 2
+					create_army = {
+						name = "Rebel army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "imperial_guard_small"
+					}					
+				}
+				while = {
+					count = 2										#was 4
+					create_army = {
+						name = "Rebel army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "conscripts"
+					}					
+				}
+				
+				create_fleet = { name = "Rebel fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:mankind_traitor_two_star_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_SwordC"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 9
+								create_ship = {
+									name = random
+									design = "NAME_SwordC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = "NAME_CobraC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_CABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 5
+								create_ship = {
+									name = random
+									design = "NAME_DABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 5
+								create_ship = {
+									name = random
+									design = "NAME_DABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+	
+}
+
+planet_event = {
+	id = thehowlingevents.3
+	hide_window = yes
+	is_triggered_only = yes
+	location = ROOT
+	
+	immediate = {
+			every_country = {
+				limit = {
+					has_country_flag = mankind_traitor_two_star_empire
+				}
+				save_event_target_as = mankind_traitor_two_star_empire
+			}
+				while = {
+					count = 2										#was 4
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "death_korps"
+					}					
+				}
+				while = {
+					count = 1										#was 2
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "skittari"
+					}					
+				}
+				while = {
+					count = 2										#was 4
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "death_planet_imperial_guard"
+					}					
+				}
+				while = {
+					count = 2										#was 5
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "imperial_guard_big"
+					}					
+				}
+				while = {
+					count = 5										#was 10
+					create_army = {
+						name = "Rebel Army"
+						owner = event_target:mankind_traitor_two_star_empire
+						species = owner_main_species
+						type = "imperial_guard_medium"
+					}					
+				}
+				
+				create_fleet = { name = "Rebel fleet" }	
+					
+						last_created_fleet = {
+							set_owner = event_target:mankind_traitor_two_star_empire
+							
+							create_ship = {
+								name = random
+								design = "NAME_SwordC"
+								graphical_culture = "imperiall_01"
+							}
+							while = {
+								count = 13
+								create_ship = {
+									name = random
+									design = "NAME_SwordC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 14
+								create_ship = {
+									name = random
+									design = "NAME_CobraC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 1
+								create_ship = {
+									name = random
+									design = "NAME_BABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 3
+								create_ship = {
+									name = random
+									design = "NAME_CABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 2
+								create_ship = {
+									name = random
+									design = "NAME_CABCDE"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_DABC"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							while = {
+								count = 7
+								create_ship = {
+									name = random
+									design = "NAME_DABCD"
+									graphical_culture = "imperiall_01"
+								}
+							}
+							set_location = {
+								target = ROOT
+								distance = 0
+								angle = random
+							}
+								queue_actions = {
+									repeat = {
+										find_closest_planet = {
+											trigger = {
+												id = "chaosarm.60.trigger.1"
+												exists = owner
+												#NOT = {
+												#	has_planet_flag = dontattackitagainxd
+												#}
+											}
+											found_planet = {
+												orbit_planet = THIS
+												wait = 20
+												#planet_event = { id = hivefleetcoming.10 }
+											}
+										}
+									}
+								}
+						}
+	}
+}
+##### 2 wave
+country_event = {
+	id = thehowlingevents.4
+	title = "Xenos forces!"
+	desc = thxe.4.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_evt_Rebelion_Krieg_Fight
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {	
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents2
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = thehowlingevents.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents22
+			}
+			planet_event = { id = thehowlingevents.3 }
+		}
+		country_event = { id = thehowlingevents.5 days = 1 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 3 wave
+country_event = {
+	id = thehowlingevents.5
+	title = "Xenos forces!"
+	desc = thxe.5.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = Rebelion_IG_Fight
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {	
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents3
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = thehowlingevents.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents33
+			}
+			planet_event = { id = thehowlingevents.3 }
+		}
+		country_event = { id = thehowlingevents.6 days = 1 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 4 wave
+country_event = {
+	id = thehowlingevents.6
+	title = "Xenos forces!"
+	desc = thxe.6.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_evt_Black_Tempalrs
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {	
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents4
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = thehowlingevents.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents44
+			}
+			planet_event = { id = thehowlingevents.3 }
+		}
+		country_event = { id = thehowlingevents.7 days = 1 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 5 wave
+country_event = {
+	id = thehowlingevents.7
+	title = "Xenos forces!"
+	desc = thxe.7.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = Rebelion_IG_Fight
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {	
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents5
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = thehowlingevents.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents55
+			}
+			planet_event = { id = thehowlingevents.3 }
+		}
+		country_event = { id = thehowlingevents.8 days = 1 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+##### 6 wave
+country_event = {
+	id = thehowlingevents.8
+	title = "Xenos forces!"
+	desc = thxe.8.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_evt_Black_Tempalrs_Dwa
+	trigger = {
+		#years_passed > 1
+		has_country_flag = human_empire
+	}
+	
+	immediate = {	
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents6
+			}
+			planet_event = { id = chaosturnarmyintotraitors.1 }
+			planet_event = { id = thehowlingevents.2 }
+		}
+		every_owned_planet = {
+			limit = {
+				has_ground_combat = no 
+				has_planet_flag = thehowlingevents66
+			}
+			planet_event = { id = thehowlingevents.3 }
+		}
+		country_event = { id = thehowlingevents.9 days = 100 }
+	}
+	option = {
+		name = "ok"
+	}
+}
+
+country_event = {
+	id = thehowlingevents.9
+	title = "Strange Phenomena"
+	desc = thxe.9.desc 
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_evt_Warp_Waves
+	immediate = {
+	}
+
+	option = {
+		name = "Terrible!"
+		add_modifier = {
+			modifier = "howling_zero_speed_ships"
+			days = 800
+		}
+		add_modifier = {
+			modifier = "howling_zero_another"
+			days = 1800
+		}
+	}
+	option = {
+		name = "ok"
+	}
+}
